@@ -43,3 +43,15 @@ body {
 .navbar-links li a:hover {
   color: #7f2d2d; /* Darker red on hover */
 }
+
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #FACDA6; /* fallback color */
+  background-image: url('./assets/Rainbows.png');
+  background-size: 1000px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
