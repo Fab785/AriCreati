@@ -56,7 +56,7 @@ body {
   padding: 0;
   font-family: 'Arial', sans-serif;
   background-color: #FACDA6; /* fallback color */
-  background-image: url('./assets/Rainbows.png');
+  background-image: url('./assets/Rainbows\ 2.png');
   background-size: cover;        /* Make image cover the whole page */
   background-repeat: no-repeat;  /* Don't repeat the image */
   background-position: center;   /* Center the image */
