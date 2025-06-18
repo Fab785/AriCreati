@@ -1,4 +1,10 @@
-/* Base setup */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap');
+
+
+
+
 body {
   margin: 0;
   padding: 0;
@@ -51,7 +57,42 @@ body {
   font-family: 'Arial', sans-serif;
   background-color: #FACDA6; /* fallback color */
   background-image: url('./assets/Rainbows.png');
-  background-size: 1000px;
-  background-repeat: no-repeat;
-  background-position: center;
+  background-size: cover;        /* Make image cover the whole page */
+  background-repeat: no-repeat;  /* Don't repeat the image */
+  background-position: center;   /* Center the image */
+  background-attachment: fixed;  /* Keep it fixed during scroll */
 }
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  position: relative;
+}
+
+.navbar-title {
+  position: absolute;
+  left: 45%;
+  top: 10px;
+  transform: translateX(-50%);
+  font-family: 'Lobster Two', cursive;
+  color: #A54040;
+  pointer-events: none;
+  user-select: none;
+  text-align: center;
+  line-height: 1;
+}
+
+.title-main {
+  font-size: 120px;
+  display: block;
+}
+
+.title-sub {
+  font-size: 48px;
+  margin-top: -20px; /* Pull it up closer */
+  display: block;
+}
+
+
