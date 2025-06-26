@@ -1,28 +1,37 @@
-import React from "react";
+import React, { useRef } from "react";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import HeroSection from "./components/HeroSection";
-// Import other sections later...
+import AboutSection from "./components/AboutSection";
 
 function App() {
+  const aboutRef = useRef(null);
+
+  const scrollToAbout = () => {
+    if (aboutRef.current) {
+      aboutRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
-    <div className="app-container">
+    <>
       <Navbar />
-      {/* Spacer goes here BEFORE the window */}
+
+      {/* 🌟 Spacer between navbar and content */}
       <div style={{ height: "250px" }}></div>
 
-      {/* Floating window starts AFTER spacer */}
       <div className="content-window">
-        <HeroSection />
-        {/* Other sections */}
+        <HeroSection onDiscoverClick={scrollToAbout} />
+        <div ref={aboutRef}>
+          <AboutSection />
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 
-
-
 export default App;
+
 
 
 
