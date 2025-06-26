@@ -1,16 +1,18 @@
 import React from "react";
-import heroImage from "../assets/pexels-jessbaileydesign-1117542.jpg"; // Use your image path
+import heroImage from "../assets/pexels-jessbaileydesign-1117542.jpg";
 
 export default function HeroSection({ onDiscoverClick }) {
   return (
     <section
       style={{
         position: "relative",
+        minHeight: "80vh", // ✅ reduced from 100vh
         overflow: "hidden",
         borderRadius: "26px",
+        marginBottom: "100px", // ✅ keeps gap between Hero and About
       }}
     >
-      {/* Animated background layer */}
+      {/* Background Image with Zoom */}
       <div
         style={{
           position: "absolute",
@@ -26,13 +28,13 @@ export default function HeroSection({ onDiscoverClick }) {
         }}
       />
 
-      {/* Foreground content */}
+      {/* Foreground Content */}
       <div
         style={{
           position: "relative",
           zIndex: 2,
           textAlign: "center",
-          padding: "40px 20px 0 20px",
+          padding: "40px 20px 60px",
           color: "#000",
           fontFamily: "'Montserrat', sans-serif",
           lineHeight: 1.2,
@@ -104,9 +106,9 @@ export default function HeroSection({ onDiscoverClick }) {
         >
           DISCOVER MORE
         </button>
-
-        <div style={{ marginBottom: "80px" }}></div>
       </div>
     </section>
   );
 }
+
+
