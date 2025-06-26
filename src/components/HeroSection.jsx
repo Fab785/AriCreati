@@ -97,7 +97,7 @@ export default function HeroSection({ onDiscoverClick }) {
             padding: "12px 28px",
             fontSize: "16px",
             fontWeight: "700",
-            backgroundColor: "#4CAF50",
+            backgroundColor: "#A54040",
             color: "#fff",
             border: "none",
             borderRadius: "4px",
