@@ -72,7 +72,6 @@ export default function HeroSection() {
       >
         Good Creations, Real Artists, Great Vibes.
       </p>
-
       <button
         style={{
           marginTop: "40px",
@@ -86,7 +85,7 @@ export default function HeroSection() {
           cursor: "pointer",
         }}
       >
-        WHO WE ARE
+        DISCOVER MORE 
       </button>
     </section>
   );
