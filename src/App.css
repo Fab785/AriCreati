@@ -169,24 +169,46 @@ body {
 
   background-color: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(10px);
-  border-radius: 56px;
+  border-radius: 26px;
   box-shadow: 0 8px 40px rgba(0, 0, 0, 0.25);
   border: 1px solid rgba(165, 64, 64, 0.3); /* Subtle red border */
 
-  overflow-y: auto;
+  overflow-y: auto;   /* Scrollable vertical */
+  overflow-x: hidden; /* Prevent horizontal scroll */
   scrollbar-width: thin;
+  scrollbar-color: #a54040 rgba(255, 255, 255, 0.3);
 
-  padding: 0px 40px 60px 40px; /* No top padding — helps hero start at top */
+  padding: 0px 40px 60px 40px; /* Padding */
   position: relative;
   z-index: 10;
 }
 
-
+/* WebKit scrollbar styling */
 .content-window::-webkit-scrollbar {
-  width: 6px;
+  width: 8px;
+}
+
+.content-window::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.3);
 }
 
 .content-window::-webkit-scrollbar-thumb {
   background-color: #a54040;
   border-radius: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.5);
 }
+
+
+.scroll-area::-webkit-scrollbar {
+  width: 2px;               /* ✅ Thinner bar */
+  height: 2px;              /* ✅ Thinner horizontal scroll if needed */
+}
+
+.scroll-area::-webkit-scrollbar-thumb {
+  background-color: #7f2d2d;
+  border-radius: 10px;
+  margin: 200px;             /* ✅ Makes thumb shorter by adding spacing */
+  min-height: 40px;         /* ✅ Prevents it from being too small */
+}
+
+
