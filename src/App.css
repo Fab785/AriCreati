@@ -1,79 +1,93 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap'); /* Elegant like "Passionate foodies" */
 
 
-
-
+/* ----------------- GLOBAL ------------------ */
 body {
   margin: 0;
   padding: 0;
   font-family: 'Arial', sans-serif;
-  background-color: #FACDA6; /* Matched peach cream background */
+  background-color: #FACDA6;
+  background-image: url('./assets/Rainbows 2.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
 }
 
-/* Navbar styles */
+/* ----------------- NAVBAR ------------------ */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: #A54040;
   padding: 20px 40px;
+  position: relative;
+  flex-wrap: wrap;
+  gap: 16px;
 }
 
+/* Logo */
 .navbar-logo {
   height: 80px;
   width: 80px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid #A54040; /* Matches the logo color */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); /* Soft shadow */
+  border: 2px solid #A54040;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
-
-.navbar-links {
-  list-style: none;
+/* Left-side brand */
+.navbar-brand {
   display: flex;
-  gap: 30px;
-  margin: 0;
-  padding: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
 }
 
-.navbar-links li a {
-  text-decoration: none;
-  color: #A54040; /* Matched logo red */
+.navbar-logo {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Text under logo */
+.navbar-text-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 4px;
+  color: white;
+}
+
+.navbar-title-main {
+  font-size: 24px;
   font-weight: bold;
-  font-size: 16px;
-  transition: color 0.3s ease;
-}
-
-.navbar-links li a:hover {
-  color: #7f2d2d; /* Darker red on hover */
-}
-
-
-body {
+  color: #FACDA6;
+  text-transform: uppercase;
   margin: 0;
-  padding: 0;
-  font-family: 'Arial', sans-serif;
-  background-color: #FACDA6; /* fallback color */
-  background-image: url('./assets/Rainbows\ 2.png');
-  background-size: cover;        /* Make image cover the whole page */
-  background-repeat: no-repeat;  /* Don't repeat the image */
-  background-position: center;   /* Center the image */
-  background-attachment: fixed;  /* Keep it fixed during scroll */
 }
 
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 40px;
-  position: relative;
+.navbar-subtitle-script {
+  font-family: 'Dancing Script', cursive;
+  color: #FACDA6;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
 }
 
+
+/* Title */
 .navbar-title {
   position: absolute;
-  left: 45%;
+  left: 50%;
   top: 10px;
   transform: translateX(-50%);
   font-family: 'Lobster Two', cursive;
@@ -91,8 +105,100 @@ body {
 
 .title-sub {
   font-size: 48px;
-  margin-top: -20px; /* Pull it up closer */
+  margin-top: -20px;
   display: block;
 }
 
+/* Links */
+.navbar-links {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-links li a {
+  text-decoration: none;
+  color: #FACDA6;
+  font-weight: bold;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.navbar-links li a:hover {
+  color: #7f2d2d;
+}
+
+/* ----------------- BURGER BUTTON ------------------ */
+.burger-button {
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: #FACDA6;
+  cursor: pointer;
+  display: none;
+  z-index: 999;
+}
+
+.app-container {
+  min-height: 100vh;
+  background-color: #FACDA6; /* matches your peach background */
+  /* or add other global styles here */
+}
+
+
+/* ----------------- RESPONSIVE ------------------ */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .burger-button {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: #FACDA6;
+    cursor: pointer;
+    display: none;
+    z-index: 999;
+  }
+  
+
+  .navbar-title {
+    position: static;
+    transform: none;
+    margin-top: 10px;
+  }
+
+  .title-main {
+    font-size: 48px;
+  }
+
+  .title-sub {
+    font-size: 24px;
+    margin-top: -8px;
+  }
+
+  .burger-button {
+    display: block;
+  }
+
+  .navbar-links {
+    display: none;
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .navbar-links.show {
+    display: flex;
+  }
+}
 

@@ -4,7 +4,7 @@ import Navbar from "./components/Navbar";
 
 function App() {
   return (
-    <div>
+    <div className="app-container">
       <Navbar />
       {/* Add other page sections below */}
     </div>
@@ -12,3 +12,4 @@ function App() {
 }
 
 export default App;
+
