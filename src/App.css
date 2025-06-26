@@ -211,4 +211,12 @@ body {
   min-height: 40px;         /* ✅ Prevents it from being too small */
 }
 
+@keyframes zoomIn {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.05);
+  }
+}
 
