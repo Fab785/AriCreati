@@ -1,5 +1,5 @@
 import React from "react";
-import aboutImg from "../assets/pexels-willian-alves-254412482-12537777.jpg"; // Replace with your actual image
+import aboutImg from "../assets/pexels-willian-alves-254412482-12537777.jpg"; 
 
 export default function AboutSection() {
   return (
@@ -11,7 +11,7 @@ export default function AboutSection() {
         justifyContent: "space-between",
         gap: "40px",
         padding: "60px 20px",
-        color: "#000",
+        color: "#A54040",
         fontFamily: "'Montserrat', sans-serif",
       }}
     >

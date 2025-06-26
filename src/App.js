@@ -19,7 +19,7 @@ function App() {
 
       <div className="content-window">
         <HeroSection onDiscoverClick={scrollToAbout} />
-        <div ref={aboutRef} style={{ minHeight: "400px", backgroundColor: "#eee" }}>
+        <div ref={aboutRef} style={{ minHeight: "400px", backgroundColor: "#FACDA6" }}>
           <AboutSection />
         </div>
       </div>
