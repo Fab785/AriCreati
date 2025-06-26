@@ -1,5 +1,4 @@
 import React, { useRef } from "react";
-import "./App.css";
 import Navbar from "./components/Navbar";
 import HeroSection from "./components/HeroSection";
 import AboutSection from "./components/AboutSection";
@@ -9,20 +8,18 @@ function App() {
 
   const scrollToAbout = () => {
     if (aboutRef.current) {
-      aboutRef.current.scrollIntoView({ behavior: "smooth" });
+      aboutRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
 
   return (
     <>
       <Navbar />
-
-      {/* 🌟 Spacer between navbar and content */}
-      <div style={{ height: "250px" }}></div>
+      <div style={{ height: "250px" }}></div> {/* Spacer */}
 
       <div className="content-window">
         <HeroSection onDiscoverClick={scrollToAbout} />
-        <div ref={aboutRef}>
+        <div ref={aboutRef} style={{ minHeight: "400px", backgroundColor: "#eee" }}>
           <AboutSection />
         </div>
       </div>
@@ -31,6 +28,8 @@ function App() {
 }
 
 export default App;
+
+
 
 
 
