@@ -1,27 +1,39 @@
-import React from "react";
+import React, { useRef } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 import Navbar from "./components/Navbar";
 import HeroSection from "./components/HeroSection";
 import AboutSection from "./components/AboutSection";
-import AboutMore from "./pages/AboutMore"; // import the new page
+import AboutMore from "./pages/AboutMore";
 
 function App() {
+  const aboutRef = useRef(null);
+
+  const scrollToAbout = () => {
+    if (aboutRef.current) {
+      aboutRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
+  // Home page layout with hero + about
+  const HomePage = () => (
+    <>
+      <div style={{ height: "250px" }}></div>
+
+      <div className="content-window">
+        <HeroSection onDiscoverClick={scrollToAbout} />
+        <div ref={aboutRef}>
+          <AboutSection />
+        </div>
+      </div>
+    </>
+  );
+
   return (
     <Router>
       <Navbar />
       <Routes>
-        <Route
-          path="/"
-          element={
-            <>
-              <div style={{ height: "250px" }}></div>
-              <div className="content-window">
-                <HeroSection />
-                <AboutSection />
-              </div>
-            </>
-          }
-        />
+        <Route path="/" element={<HomePage />} />
         <Route path="/about-more" element={<AboutMore />} />
       </Routes>
     </Router>
@@ -29,8 +41,6 @@ function App() {
 }
 
 export default App;
-
-
 
 
 

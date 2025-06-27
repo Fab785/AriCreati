@@ -9,7 +9,7 @@ export default function HeroSection({ onDiscoverClick }) {
         minHeight: "80vh", // ✅ reduced from 100vh
         overflow: "hidden",
         borderRadius: "26px",
-        marginBottom: "100px", // ✅ keeps gap between Hero and About
+        marginBottom: "110px", // ✅ keeps gap between Hero and About
       }}
     >
       {/* Background Image with Zoom */}
