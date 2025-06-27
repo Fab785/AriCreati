@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "../App.css";
 import logo from "../assets/Ari.jpg";
 import RotatingText from "./RotatingText";
@@ -28,10 +29,10 @@ export default function Navbar() {
 
       <ul className={`navbar-links ${isMenuOpen ? "show" : ""}`}>
         <li>
-          <a href="#home">HOME</a>
+          <Link to="/" onClick={() => setIsMenuOpen(false)}>HOME</Link>
         </li>
         <li>
-          <a href="#about">ABOUT ME</a>
+          <Link to="/about-more" onClick={() => setIsMenuOpen(false)}>ABOUT ME</Link>
         </li>
         <li>
           <a href="#gallery">GALLERY</a>

@@ -1,34 +1,34 @@
-import React, { useRef } from "react";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import HeroSection from "./components/HeroSection";
 import AboutSection from "./components/AboutSection";
+import AboutMore from "./pages/AboutMore"; // import the new page
 
 function App() {
-  const aboutRef = useRef(null);
-
-  const scrollToAbout = () => {
-    if (aboutRef.current) {
-      aboutRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-  };
-
   return (
-    <>
+    <Router>
       <Navbar />
-      <div style={{ height: "250px" }}></div> {/* Spacer */}
-
-      <div className="content-window">
-        <HeroSection onDiscoverClick={scrollToAbout} />
-        <div ref={aboutRef} style={{ minHeight: "400px", backgroundColor: "#FACDA6" }}>
-          <AboutSection />
-        </div>
-      </div>
-    </>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <div style={{ height: "250px" }}></div>
+              <div className="content-window">
+                <HeroSection />
+                <AboutSection />
+              </div>
+            </>
+          }
+        />
+        <Route path="/about-more" element={<AboutMore />} />
+      </Routes>
+    </Router>
   );
 }
 
 export default App;
-
 
 
 
