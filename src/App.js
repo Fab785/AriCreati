@@ -15,11 +15,10 @@ function App() {
     }
   };
 
-  // Home page layout with hero + about
   const HomePage = () => (
     <>
+      <Navbar /> {/* Only here at the top */}
       <div style={{ height: "250px" }}></div>
-
       <div className="content-window">
         <HeroSection onDiscoverClick={scrollToAbout} />
         <div ref={aboutRef}>
@@ -31,7 +30,6 @@ function App() {
 
   return (
     <Router>
-      <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/about-more" element={<AboutMore />} />
@@ -41,6 +39,7 @@ function App() {
 }
 
 export default App;
+
 
 
 
