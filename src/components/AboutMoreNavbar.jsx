@@ -1,34 +1,67 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import logo from "../assets/Ari.jpg";
+import RotatingTextAboutMore from "./RotatingTextAboutMore";
 
 export default function AboutMoreNavbar() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
+
   return (
-    <nav
-      style={{
-        display: "flex",
-        alignItems: "center",
-        gap: "20px",
-        padding: "10px 0",
-        borderBottom: "1px solid #A54040",
-        color: "#A54040",
-      }}
-    >
-      <img
-        src={logo}
-        alt="Logo"
-        style={{
-          width: "50px",
-          height: "50px",
-          borderRadius: "50%",
-          border: "2px solid #A54040",
-          objectFit: "cover",
-        }}
-      />
-      {/* No 'About Me' button here as you requested */}
-      <h3 style={{ fontFamily: "'Dancing Script', cursive", fontWeight: "600", margin: 0 }}>
-        Creazioni
-      </h3>
+    <nav className="navbar">
+      <div className="navbar-brand">
+        <img src={logo} alt="Logo" className="navbar-logo" />
+        <div className="navbar-text-left">
+          <h1 className="navbar-title-main">Aricreati</h1>
+          <p className="navbar-subtitle-script">Creazioni</p>
+        </div>
+      </div>
+
+      <RotatingTextAboutMore />
+
+      <button
+        className="burger-button"
+        onClick={() => setIsMenuOpen(!isMenuOpen)}
+        aria-label="Toggle menu"
+      >
+        ☰
+      </button>
+
+      <ul className={`navbar-links ${isMenuOpen ? "show" : ""}`}>
+        <li>
+          {/* Use onClick with navigate for SPA routing */}
+          <button
+            onClick={() => navigate("/")}
+            style={{
+              background: "none",
+              border: "none",
+              color: "#A54040",
+              cursor: "pointer",
+              fontSize: "16px",
+              fontWeight: "700",
+              padding: "0",
+            }}
+          >
+            HOME
+          </button>
+        </li>
+        {/* ABOUT ME link removed */}
+        <li>
+          <a href="#gallery">GALLERY</a>
+        </li>
+        <li>
+          <a href="#workplace">WORKPLACE</a>
+        </li>
+        <li>
+          <a href="#contact">CONTACTS</a>
+        </li>
+      </ul>
     </nav>
   );
 }
+
+  
+
+
+
 
