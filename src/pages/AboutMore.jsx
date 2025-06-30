@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "../components/Navbar";
+import AboutMoreNavbar from "../components/AboutMoreNavbar"; // Adjust path if needed
 import headerImage from "../assets/pexels-leeloothefirst-6487215.jpg";
 
 export default function AboutMore() {
@@ -34,19 +34,21 @@ export default function AboutMore() {
             backdropFilter: "blur(10px)",
           }}
         >
-          <Navbar />
+          <AboutMoreNavbar />
 
           <div style={{ padding: "40px 0", color: "#A54040" }}>
             <h2>More About My Creative Journey</h2>
             <p>
               Here's where you can go deeper—talk about your journey, passions, experiences, or even show a gallery or timeline. Let the user explore your creative path!
             </p>
+            {/* You can expand this section with more content or components */}
           </div>
         </div>
       </div>
     </>
   );
 }
+
 
 
 
