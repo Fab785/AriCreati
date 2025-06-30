@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import logo from "../assets/Ari.jpg";
-import RotatingTextAboutMore from "./RotatingTextAboutMore"; // import new typing effect
+import RotatingTextAboutMore from "./RotatingTextAboutMore";
 
 export default function AboutMoreNavbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -17,7 +17,6 @@ export default function AboutMoreNavbar() {
         </div>
       </div>
 
-      {/* Replace rotating text with typing effect */}
       <RotatingTextAboutMore />
 
       <button
@@ -30,23 +29,17 @@ export default function AboutMoreNavbar() {
 
       <ul className={`navbar-links ${isMenuOpen ? "show" : ""}`}>
         <li>
-          <button
-            onClick={() => navigate("/")}
-            style={{
-              background: "none",
-              border: "none",
-              color: "#FACDA6",
-              cursor: "pointer",
-              fontSize: "16px",
-              fontWeight: "700",
-              padding: "0",
-              display: "inline-block",
+          <a
+            href="/"
+            onClick={(e) => {
+              e.preventDefault();
+              navigate("/");
             }}
           >
             HOME
-          </button>
+          </a>
         </li>
-        {/* Removed ABOUT ME button here */}
+        {/* Removed ABOUT ME link here */}
         <li>
           <a href="#gallery">GALLERY</a>
         </li>
@@ -60,6 +53,7 @@ export default function AboutMoreNavbar() {
     </nav>
   );
 }
+
 
 
 
