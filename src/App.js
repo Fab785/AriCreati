@@ -4,8 +4,10 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import HeroSection from "./components/HeroSection";
 import AboutSection from "./components/AboutSection";
-import GallerySection from "./components/GallerySection";  // <-- Imported GallerySection
+import GallerySection from "./components/GallerySection";
 import AboutMore from "./pages/AboutMore";
+import Gallery from "./pages/Gallery";
+import BackToTopButton from "./UI/BackToTopButton";
 
 function App() {
   const aboutRef = useRef(null);
@@ -18,16 +20,16 @@ function App() {
 
   const HomePage = () => (
     <>
-      <Navbar /> {/* Only here at the top */}
+      <Navbar />
       <div style={{ height: "250px" }}></div>
       <div className="content-window">
         <HeroSection onDiscoverClick={scrollToAbout} />
         <div ref={aboutRef}>
           <AboutSection />
         </div>
-
-        <GallerySection /> {/* Added GallerySection here */}
+        <GallerySection />
       </div>
+      <BackToTopButton />
     </>
   );
 
@@ -36,12 +38,16 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/about-more" element={<AboutMore />} />
+        <Route path="/gallery" element={<Gallery />} />
       </Routes>
     </Router>
   );
 }
 
 export default App;
+
+
+
 
 
 

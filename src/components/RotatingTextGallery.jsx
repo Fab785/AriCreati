@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const words = ["ABOUT ME", "ARICREATI", "CREAZIONI"];
+const words = ["GALLERY", "ARICREATI", "CREAZIONI"];
 
 export default function RotatingTextAboutMore() {
   const [index, setIndex] = useState(0);
@@ -28,5 +28,3 @@ export default function RotatingTextAboutMore() {
     </div>
   );
 }
-
-
