@@ -9,7 +9,7 @@ export default function AboutMore() {
   return (
     <>
       {/* Header background image */}
-      <div style={{ position: "relative", paddingTop: "220px", height: "100vh" }}>
+      <div style={{ position: "relative", paddingTop: "220px" }}>
         <img
           src={headerImage}
           alt="About Me Header"
@@ -25,24 +25,24 @@ export default function AboutMore() {
           }}
         />
 
-        {/* Floating window with fixed navbar and scrollable content */}
+        {/* Floating window with internal scroll */}
         <div
           className="content-window"
           style={{
             maxWidth: "1400px",
-            height: "80vh", // height of floating window
+            height: "80vh",
             borderRadius: "20px",
             margin: "0 auto 40px",
             padding: "200px 20px 40px",
             position: "relative",
             zIndex: 1,
-            backgroundColor: "rgba(255, 255, 255, 0.85)",
+            backgroundColor: "#FACDA6", // ✅ Only change here
             backdropFilter: "blur(10px)",
             display: "flex",
             flexDirection: "column",
           }}
         >
-          {/* Fixed navbar */}
+          {/* Fixed navbar inside floating window */}
           <div style={{ flex: "0 0 auto" }}>
             <AboutMoreNavbar />
           </div>
@@ -122,7 +122,7 @@ export default function AboutMore() {
               </div>
             </div>
 
-            {/* SECTION 3: Image Left - Text Right */}
+            {/* SECTION 3: Image Left - Text Right again */}
             <div
               style={{
                 backgroundColor: "#FACDA6",
@@ -160,5 +160,6 @@ export default function AboutMore() {
     </>
   );
 }
+
 
 
