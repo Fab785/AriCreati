@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import HeroSection from "./components/HeroSection";
 import AboutSection from "./components/AboutSection";
+import GallerySection from "./components/GallerySection";  // <-- Imported GallerySection
 import AboutMore from "./pages/AboutMore";
 
 function App() {
@@ -24,6 +25,8 @@ function App() {
         <div ref={aboutRef}>
           <AboutSection />
         </div>
+
+        <GallerySection /> {/* Added GallerySection here */}
       </div>
     </>
   );
@@ -39,6 +42,7 @@ function App() {
 }
 
 export default App;
+
 
 
 
