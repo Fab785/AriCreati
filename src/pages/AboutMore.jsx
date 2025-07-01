@@ -9,34 +9,42 @@ export default function AboutMore() {
   return (
     <>
       {/* Header background image */}
-      <div style={{ position: "relative", paddingTop: "220px" }}>
-        <img
-          src={headerImage}
-          alt="About Me Header"
-          style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100%",
-            objectFit: "cover",
-            zIndex: 0,
-            opacity: 0.7,
-          }}
-        />
+<div
+  style={{
+    position: "relative",
+    paddingTop: "100px",
+    minHeight: "100vh",       // covers most of the page
+    marginBottom: "0vh",    // space left for footer
+  }}
+>
+  <img
+    src={headerImage}
+    alt="About Me Header"
+    style={{
+      position: "absolute",
+      top: 0,
+      left: 0,
+      width: "100%",
+      height: "100%",
+      objectFit: "cover",
+      zIndex: 0,
+      opacity: 0.7,
+    }}
+  />
+
 
         {/* Floating window with internal scroll */}
         <div
           className="content-window"
           style={{
             maxWidth: "1400px",
-            height: "80vh",
+            height: "90vh",
             borderRadius: "20px",
             margin: "0 auto 40px",
             padding: "200px 20px 40px",
             position: "relative",
             zIndex: 1,
-            backgroundColor: "#FACDA6", // ✅ Only change here
+            backgroundColor: "#FACDA6",
             backdropFilter: "blur(10px)",
             display: "flex",
             flexDirection: "column",
@@ -160,6 +168,5 @@ export default function AboutMore() {
     </>
   );
 }
-
 
 
