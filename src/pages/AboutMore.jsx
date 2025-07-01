@@ -3,12 +3,13 @@ import AboutMoreNavbar from "../components/AboutMoreNavbar";
 import headerImage from "../assets/pexels-leeloothefirst-6487215.jpg";
 import aboutDetailImg from "../assets/pexels-karolina-grabowska-6634748.jpg";
 import secondImg from "../assets/pexels-miriam-alonso-7585762.jpg";
+import thirdImg from "../assets/pexels-karolina-grabowska-6634775.jpg";
 
 export default function AboutMore() {
   return (
     <>
       {/* Header background image */}
-      <div style={{ position: "relative", paddingTop: "220px" }}>
+      <div style={{ position: "relative", paddingTop: "220px", height: "100vh" }}>
         <img
           src={headerImage}
           alt="About Me Header"
@@ -17,19 +18,19 @@ export default function AboutMore() {
             top: 0,
             left: 0,
             width: "100%",
-            height: "550px",
+            height: "100%",
             objectFit: "cover",
             zIndex: 0,
             opacity: 0.7,
           }}
         />
 
-        {/* Floating window with internal scroll */}
+        {/* Floating window with fixed navbar and scrollable content */}
         <div
           className="content-window"
           style={{
             maxWidth: "1400px",
-            height: "80vh", // 👈 height of floating window
+            height: "80vh", // height of floating window
             borderRadius: "20px",
             margin: "0 auto 40px",
             padding: "200px 20px 40px",
@@ -41,7 +42,7 @@ export default function AboutMore() {
             flexDirection: "column",
           }}
         >
-          {/* Fixed navbar inside floating window */}
+          {/* Fixed navbar */}
           <div style={{ flex: "0 0 auto" }}>
             <AboutMoreNavbar />
           </div>
@@ -57,6 +58,7 @@ export default function AboutMore() {
             {/* SECTION 1: Image Left - Text Right */}
             <div
               style={{
+                backgroundColor: "#FACDA6",
                 display: "flex",
                 alignItems: "center",
                 gap: "40px",
@@ -90,6 +92,7 @@ export default function AboutMore() {
             {/* SECTION 2: Text Left - Image Right */}
             <div
               style={{
+                backgroundColor: "#FACDA6",
                 display: "flex",
                 alignItems: "center",
                 gap: "40px",
@@ -118,13 +121,44 @@ export default function AboutMore() {
                 </p>
               </div>
             </div>
+
+            {/* SECTION 3: Image Left - Text Right */}
+            <div
+              style={{
+                backgroundColor: "#FACDA6",
+                display: "flex",
+                alignItems: "center",
+                gap: "40px",
+                padding: "60px 0",
+                color: "#A54040",
+                fontFamily: "'Montserrat', sans-serif",
+              }}
+            >
+              <img
+                src={thirdImg}
+                alt="Creative Tools"
+                style={{
+                  width: "40%",
+                  height: "300px",
+                  borderRadius: "12px",
+                  boxShadow: "0 6px 20px rgba(0,0,0,0.2)",
+                  objectFit: "cover",
+                }}
+              />
+              <div style={{ width: "60%" }}>
+                <h2>Tools and Materials I Love</h2>
+                <p>
+                  Whether it's vibrant paint, textured paper, digital brushes, or natural materials, I believe that tools
+                  carry energy. I carefully choose each one to bring out the best in my artistic vision. This selection reflects
+                  not just what I use, but how I connect with each piece I create.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </>
   );
 }
-
-
 
 
