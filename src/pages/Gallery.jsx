@@ -1,23 +1,47 @@
 import React, { useState } from "react";
 import GalleryNavbar from "../components/GalleryNavbar";
 import headerImage from "../assets/pexels-surene-palvie-1075224-2399125.jpg";
-import img1 from "../assets/IMG1.jpg";
-import img2 from "../assets/IMG-20250617-WA0009.jpg";
-import img3 from "../assets/IMG3.jpg";
-import img4 from "../assets/IMG-20250617-WA0004.jpg";
-import img5 from "../assets/Chloe.jpg";
-import img6 from "../assets/IMG-20250617-WA0007.jpg";
-import img7 from "../assets/IMG-20250617-WA0008.jpg";
+import img1 from "../assets/Arlena.jpg";
+import img2 from "../assets/Chloe.jpg";
+import img3 from "../assets/Rebecca.jpg";
+import img4 from "../assets/Erika.jpg";
+import img5 from "../assets/Cuori2.jpg";
+import img6 from "../assets/Cuori.jpg";
+import img7 from "../assets/Gardetti.jpg";
+import img8 from "../assets/Pianta.jpg";
+import img9 from "../assets/Fiori.jpg";
+import img10 from "../assets/Fiori1.jpg";
+import img11 from "../assets/sonagli2.jpg";
+import img12 from "../assets/sonagli.jpg";
+import img13 from "../assets/borse.jpg";
+import img14 from "../assets/bear.jpg";
+import img15 from "../assets/bear2.jpg";
+import img16 from "../assets/bunny.jpg";
 
 export default function Gallery() {
   const [modalImg, setModalImg] = useState(null);
+  const [visibleCount, setVisibleCount] = useState(8);
+  const [loading, setLoading] = useState(false);
+
+  const allImages = [
+    img1, img2, img3, img4, img5, img6,
+    img7, img8, img9, img10, img11, img12,
+    img13, img14, img15, img16,
+  ];
 
   const openModal = (img) => setModalImg(img);
   const closeModal = () => setModalImg(null);
 
+  const handleLoadMore = () => {
+    setLoading(true);
+    setTimeout(() => {
+      setVisibleCount((prev) => prev + 4);
+      setLoading(false);
+    }, 800);
+  };
+
   return (
     <>
-      {/* Page wrapper with background image and vertical centering */}
       <div
         style={{
           position: "relative",
@@ -43,7 +67,6 @@ export default function Gallery() {
           }}
         />
 
-        {/* Floating content window */}
         <div
           className="content-window"
           style={{
@@ -61,12 +84,10 @@ export default function Gallery() {
             flexDirection: "column",
           }}
         >
-          {/* Navbar fixed at top */}
           <div style={{ flex: "0 0 auto" }}>
             <GalleryNavbar />
           </div>
 
-          {/* Scrollable content area */}
           <div
             style={{
               overflowY: "auto",
@@ -102,7 +123,7 @@ export default function Gallery() {
                 gap: "30px",
               }}
             >
-              {[img1, img2, img3, img4, img5, img6, img7].map((img, index) => (
+              {allImages.slice(0, visibleCount).map((img, index) => (
                 <div
                   key={index}
                   style={{
@@ -140,11 +161,44 @@ export default function Gallery() {
                 </div>
               ))}
             </div>
+
+            {/* Load More Button or Spinner */}
+            <div style={{ textAlign: "center", marginTop: "30px" }}>
+              {loading ? (
+                <div className="spinner" style={spinnerStyle}></div>
+              ) : (
+                visibleCount < allImages.length && (
+                  <button
+                    onClick={handleLoadMore}
+                    style={{
+                      padding: "12px 24px",
+                      fontSize: "16px",
+                      fontWeight: "600",
+                      backgroundColor: "#A54040",
+                      color: "#fff",
+                      border: "none",
+                      borderRadius: "8px",
+                      cursor: "pointer",
+                      boxShadow: "0 2px 8px rgba(0,0,0,0.2)",
+                      transition: "background-color 0.3s ease",
+                    }}
+                    onMouseOver={(e) =>
+                      (e.currentTarget.style.backgroundColor = "#842f2f")
+                    }
+                    onMouseOut={(e) =>
+                      (e.currentTarget.style.backgroundColor = "#A54040")
+                    }
+                  >
+                    Load More
+                  </button>
+                )
+              )}
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Modal overlay */}
+      {/* Modal */}
       {modalImg && (
         <div
           onClick={closeModal}
@@ -200,4 +254,24 @@ export default function Gallery() {
     </>
   );
 }
+
+// Spinner style (CSS in JS)
+const spinnerStyle = {
+  border: "4px solid #f3f3f3",
+  borderTop: "4px solid #A54040",
+  borderRadius: "50%",
+  width: "36px",
+  height: "36px",
+  animation: "spin 1s linear infinite",
+  margin: "0 auto",
+};
+
+// Add this keyframe to your main CSS or inside index.css
+// OR insert <style> inside public/index.html:
+/*
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+*/
 
