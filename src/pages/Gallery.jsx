@@ -21,7 +21,7 @@ import img16 from "../assets/bunny.jpg";
 
 export default function Gallery() {
   const allImages = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, img14, img15, img16];
-  const [visibleCount, setVisibleCount] = useState(8);
+  const [visibleCount, setVisibleCount] = useState(3);
   const [modalImg, setModalImg] = useState(null);
   const [loading, setLoading] = useState(false);
 
@@ -31,7 +31,7 @@ export default function Gallery() {
   const handleLoadMore = () => {
     setLoading(true);
     setTimeout(() => {
-      setVisibleCount(prev => prev + 4);
+      setVisibleCount(prev => prev + 3);
       setLoading(false);
     }, 1200); // Simulate load time
   };
@@ -66,22 +66,26 @@ export default function Gallery() {
 
         {/* Floating content window */}
         <div
-          className="content-window"
-          style={{
-            maxWidth: "1800px",
-            width: "95vw",
-            height: "90vh",
-            borderRadius: "20px",
-            margin: "0 auto",
-            padding: "140px 60px 40px",
-            position: "relative",
-            zIndex: 1,
-            backgroundColor: "#FACDA6",
-            backdropFilter: "blur(10px)",
-            display: "flex",
-            flexDirection: "column",
-          }}
-        >
+        className="content-window"
+        style={{
+          maxWidth: "1200px",
+          width: "90vw",
+          minHeight: "600px",
+          margin: "40px auto",
+          backgroundColor: "rgba(255, 255, 255, 0.85)",
+          backdropFilter: "blur(10px)",
+          borderRadius: "26px",
+          boxShadow: "0 8px 40px rgba(0, 0, 0, 0.25)",
+          border: "1px solid rgba(165, 64, 64, 0.3)",
+          padding: "40px 60px",
+          display: "flex",
+          flexDirection: "column",
+          zIndex: 10,
+          position: "relative",
+          overflowY: "auto",
+          maxHeight: "calc(100vh - 140px)",
+        }}
+      >
           {/* Navbar fixed at top */}
           <div style={{ flex: "0 0 auto" }}>
             <GalleryNavbar />
