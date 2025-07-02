@@ -18,9 +18,12 @@ import img13 from "../assets/borse.jpg";
 import img14 from "../assets/bear.jpg";
 import img15 from "../assets/bear2.jpg";
 import img16 from "../assets/bunny.jpg";
+import img17 from "../assets/red bunny.jpg";
+import img18 from "../assets/shoes.jpg";
+
 
 export default function Gallery() {
-  const allImages = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, img14, img15, img16];
+  const allImages = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, img14, img15, img16, img17, img18];
   const [visibleCount, setVisibleCount] = useState(3);
   const [modalImg, setModalImg] = useState(null);
   const [loading, setLoading] = useState(false);
