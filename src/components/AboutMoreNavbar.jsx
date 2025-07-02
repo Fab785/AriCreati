@@ -39,12 +39,19 @@ export default function AboutMoreNavbar() {
             HOME
           </a>
         </li>
-        {/* Removed ABOUT ME link here */}
         <li>
-          <a href="#gallery">GALLERY</a>
+          <a
+            href="/gallery"
+            onClick={(e) => {
+              e.preventDefault();
+              navigate("/gallery");
+            }}
+          >
+            GALLERY
+          </a>
         </li>
         <li>
-          <a href="#workplace">WORKPLACE</a>
+          <a href="#workplace">EXTRAS</a>
         </li>
         <li>
           <a href="#contact">CONTACTS</a>
@@ -53,6 +60,7 @@ export default function AboutMoreNavbar() {
     </nav>
   );
 }
+
 
 
 

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import logo from "../assets/Ari.jpg";
-import RotatingTextGallery from "./RotatingTextGallery"
+import RotatingTextGallery from "./RotatingTextGallery";
 
 export default function GalleryNavbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -13,7 +13,7 @@ export default function GalleryNavbar() {
         <img src={logo} alt="Logo" className="navbar-logo" />
         <div className="navbar-text-left">
           <h1 className="navbar-title-main">Aricreati</h1>
-          <p className="navbar-subtitle-script">Gallery</p>
+          <p className="navbar-subtitle-script">Creazioni</p>
         </div>
       </div>
 
@@ -40,10 +40,18 @@ export default function GalleryNavbar() {
           </a>
         </li>
         <li>
-          <a href="#gallery">ABOUT ME</a>
+          <a
+            href="/about-more"
+            onClick={(e) => {
+              e.preventDefault();
+              navigate("/about-more");
+            }}
+          >
+            ABOUT ME
+          </a>
         </li>
         <li>
-          <a href="#art">WORKPLACE</a>
+          <a href="#workplace">WORKPLACE</a>
         </li>
         <li>
           <a href="#contact">CONTACTS</a>

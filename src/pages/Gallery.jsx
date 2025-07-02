@@ -1,21 +1,31 @@
-// src/pages/Gallery.jsx
-import React from "react";
+import React, { useState } from "react";
 import GalleryNavbar from "../components/GalleryNavbar";
-import headerImage from "../assets/pexels-leeloothefirst-6487215.jpg"; // replace with your header bg for gallery
-import img1 from "../assets/pexels-surene-palvie-1075224-2070687.jpg";
-import img2 from "../assets/pexels-anete-lusina-4792079.jpg";
-import img3 from "../assets/pexels-anete-lusina-4792084.jpg";
+import headerImage from "../assets/pexels-surene-palvie-1075224-2399125.jpg";
+import img1 from "../assets/IMG1.jpg";
+import img2 from "../assets/IMG-20250617-WA0009.jpg";
+import img3 from "../assets/IMG3.jpg";
+import img4 from "../assets/IMG-20250617-WA0004.jpg";
+import img5 from "../assets/Chloe.jpg";
+import img6 from "../assets/IMG-20250617-WA0007.jpg";
+import img7 from "../assets/IMG-20250617-WA0008.jpg";
 
 export default function Gallery() {
+  const [modalImg, setModalImg] = useState(null);
+
+  const openModal = (img) => setModalImg(img);
+  const closeModal = () => setModalImg(null);
+
   return (
     <>
-      {/* Background image */}
+      {/* Page wrapper with background image and vertical centering */}
       <div
         style={{
           position: "relative",
-          paddingTop: "100px",
-          minHeight: "100vh",
-          marginBottom: "0vh",
+          height: "100vh",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          margin: 0,
         }}
       >
         <img
@@ -33,31 +43,30 @@ export default function Gallery() {
           }}
         />
 
-        {/* Floating window */}
+        {/* Floating content window */}
         <div
-  className="content-window"
-  style={{
-    maxWidth: "1800px",
-    width: "90vw",
-    height: "95vh",
-    borderRadius: "0",
-    margin: "20px auto",
-    padding: "160px 60px 40px",
-    position: "relative",
-    zIndex: 1,
-    backgroundColor: "#FACDA6",
-    backdropFilter: "blur(10px)",
-    display: "flex",
-    flexDirection: "column",
-  }}
->
-
-          {/* Navbar fixed inside floating window */}
+          className="content-window"
+          style={{
+            maxWidth: "1800px",
+            width: "95vw",
+            height: "90vh",
+            borderRadius: "20px",
+            margin: "0 auto",
+            padding: "140px 60px 40px",
+            position: "relative",
+            zIndex: 1,
+            backgroundColor: "#FACDA6",
+            backdropFilter: "blur(10px)",
+            display: "flex",
+            flexDirection: "column",
+          }}
+        >
+          {/* Navbar fixed at top */}
           <div style={{ flex: "0 0 auto" }}>
             <GalleryNavbar />
           </div>
 
-          {/* Scrollable content */}
+          {/* Scrollable content area */}
           <div
             style={{
               overflowY: "auto",
@@ -83,8 +92,7 @@ export default function Gallery() {
                 marginBottom: "40px",
               }}
             >
-              A curated glimpse into my creative works — each image reflects a moment, a message, or a
-              memory.
+              A curated glimpse into my creative works — each image reflects a moment, a message, or a memory.
             </p>
 
             <div
@@ -94,24 +102,101 @@ export default function Gallery() {
                 gap: "30px",
               }}
             >
-              {[img1, img2, img3, img1, img2, img3].map((img, index) => (
-                <img
+              {[img1, img2, img3, img4, img5, img6, img7].map((img, index) => (
+                <div
                   key={index}
-                  src={img}
-                  alt={`Gallery item ${index + 1}`}
                   style={{
+                    position: "relative",
                     width: "100%",
                     height: "300px",
-                    objectFit: "cover",
                     borderRadius: "16px",
+                    overflow: "hidden",
                     boxShadow: "0 6px 20px rgba(0, 0, 0, 0.2)",
+                    cursor: "pointer",
+                    transition: "transform 0.3s ease, box-shadow 0.3s ease",
                   }}
-                />
+                  onClick={() => openModal(img)}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = "scale(1.05)";
+                    e.currentTarget.style.boxShadow = "0 12px 40px rgba(165, 64, 64, 0.6)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = "scale(1)";
+                    e.currentTarget.style.boxShadow = "0 6px 20px rgba(0, 0, 0, 0.2)";
+                  }}
+                >
+                  <img
+                    src={img}
+                    alt={`Gallery item ${index + 1}`}
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                      display: "block",
+                      borderRadius: "16px",
+                      pointerEvents: "none",
+                    }}
+                  />
+                </div>
               ))}
             </div>
           </div>
         </div>
       </div>
+
+      {/* Modal overlay */}
+      {modalImg && (
+        <div
+          onClick={closeModal}
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            width: "100vw",
+            height: "100vh",
+            backgroundColor: "rgba(0,0,0,0.8)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            zIndex: 9999,
+            cursor: "pointer",
+          }}
+        >
+          <img
+            src={modalImg}
+            alt="Expanded gallery"
+            style={{
+              maxWidth: "90%",
+              maxHeight: "90%",
+              borderRadius: "20px",
+              boxShadow: "0 10px 40px rgba(165, 64, 64, 0.8)",
+            }}
+            onClick={(e) => e.stopPropagation()}
+          />
+          <button
+            onClick={closeModal}
+            style={{
+              position: "fixed",
+              top: "20px",
+              right: "20px",
+              background: "#A54040",
+              color: "white",
+              border: "none",
+              borderRadius: "50%",
+              width: "40px",
+              height: "40px",
+              fontSize: "24px",
+              cursor: "pointer",
+              lineHeight: "40px",
+              textAlign: "center",
+              padding: 0,
+            }}
+            aria-label="Close modal"
+          >
+            ×
+          </button>
+        </div>
+      )}
     </>
   );
 }

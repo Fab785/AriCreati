@@ -35,10 +35,10 @@ export default function Navbar() {
           <Link to="/about-more" onClick={() => setIsMenuOpen(false)}>ABOUT ME</Link>
         </li>
         <li>
-          <a href="#gallery">GALLERY</a>
+          <Link to="/gallery" onClick={() => setIsMenuOpen(false)}>GALLERY</Link>
         </li>
         <li>
-          <a href="#workplace">WORKPLACE</a>
+          <a href="#workplace">EXTRAS</a>
         </li>
         <li>
           <a href="#contact">CONTACTS</a>
