@@ -11,11 +11,15 @@ import imgEgypt2 from "../assets/egitto2.jpg";
 export default function Extras() {
   return (
     <>
-      {/* Full viewport wrapper with background image */}
+      {/* Outer wrapper matching Gallery.jsx */}
       <div
         style={{
           position: "relative",
           height: "100vh",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          margin: 0,
           width: "100vw",
           overflow: "hidden",
           backgroundColor: "#FACDA6",
@@ -23,40 +27,35 @@ export default function Extras() {
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          paddingTop: "100px",
           boxSizing: "border-box",
         }}
       >
-        {/* Floating window */}
+        {/* Floating window with exact Gallery styles */}
         <div
-        className="content-window"
-        style={{
-          maxWidth: "1200px",
-          width: "90vw",
-          minHeight: "600px",
-          margin: "40px auto",
-          backgroundColor: "rgba(255, 255, 255, 0.85)",
-          backdropFilter: "blur(10px)",
-          borderRadius: "26px",
-          boxShadow: "0 8px 40px rgba(0, 0, 0, 0.25)",
-          border: "1px solid rgba(165, 64, 64, 0.3)",
-          padding: "40px 60px",
-          display: "flex",
-          flexDirection: "column",
-          zIndex: 10,
-          position: "relative",
-          overflowY: "auto",
-          maxHeight: "calc(100vh - 140px)",
-        }}
-      >
-          {/* Navbar fixed/sticky inside floating window */}
+          className="content-window"
+          style={{
+            maxWidth: "1200px",
+            width: "90vw",
+            minHeight: "600px",
+            margin: "40px auto",
+            backgroundColor: "rgba(255, 255, 255, 0.85)",
+            backdropFilter: "blur(10px)",
+            borderRadius: "26px",
+            boxShadow: "0 8px 40px rgba(0, 0, 0, 0.25)",
+            border: "1px solid rgba(165, 64, 64, 0.3)",
+            padding: "40px 60px",
+            display: "flex",
+            flexDirection: "column",
+            zIndex: 10,
+            position: "relative",
+            overflowY: "auto",
+            maxHeight: "calc(100vh - 140px)",
+          }}
+        >
+          {/* Navbar fixed inside floating window */}
           <div style={{ flex: "0 0 auto" }}>
-  <ExtraNavbar />
-</div>
-
+            <ExtraNavbar />
+          </div>
 
           {/* Scrollable content area */}
           <div
@@ -191,6 +190,7 @@ export default function Extras() {
     </>
   );
 }
+
 
 
 

@@ -8,59 +8,61 @@ import thirdImg from "../assets/pexels-karolina-grabowska-6634775.jpg";
 export default function AboutMore() {
   return (
     <>
-      {/* Header background image */}
-<div
-  style={{
-    position: "relative",
-    paddingTop: "100px",
-    minHeight: "100vh",       // covers most of the page
-    marginBottom: "0vh",    // space left for footer
-  }}
->
-  <img
-    src={headerImage}
-    alt="About Me Header"
-    style={{
-      position: "absolute",
-      top: 0,
-      left: 0,
-      width: "100%",
-      height: "100%",
-      objectFit: "cover",
-      zIndex: 0,
-      opacity: 0.7,
-    }}
-  />
-
-
-        {/* Floating window with internal scroll */}
-        <div
-        className="content-window"
+      {/* Outer wrapper matching Gallery.jsx */}
+      <div
         style={{
-          maxWidth: "1200px",
-          width: "90vw",
-          minHeight: "600px",
-          margin: "40px auto",
-          backgroundColor: "rgba(255, 255, 255, 0.85)",
-          backdropFilter: "blur(10px)",
-          borderRadius: "26px",
-          boxShadow: "0 8px 40px rgba(0, 0, 0, 0.25)",
-          border: "1px solid rgba(165, 64, 64, 0.3)",
-          padding: "40px 60px",
-          display: "flex",
-          flexDirection: "column",
-          zIndex: 10,
           position: "relative",
-          overflowY: "auto",
-          maxHeight: "calc(100vh - 140px)",
+          height: "100vh",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          margin: 0,
         }}
       >
-          {/* Fixed navbar inside floating window */}
+        {/* Background image exactly like Gallery */}
+        <img
+          src={headerImage}
+          alt="About Me Header"
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            zIndex: 0,
+            opacity: 0.7,
+          }}
+        />
+
+        {/* Floating window with exact Gallery styles */}
+        <div
+          className="content-window"
+          style={{
+            maxWidth: "1200px",
+            width: "90vw",
+            minHeight: "600px",
+            margin: "40px auto",
+            backgroundColor: "rgba(255, 255, 255, 0.85)",
+            backdropFilter: "blur(10px)",
+            borderRadius: "26px",
+            boxShadow: "0 8px 40px rgba(0, 0, 0, 0.25)",
+            border: "1px solid rgba(165, 64, 64, 0.3)",
+            padding: "40px 60px",
+            display: "flex",
+            flexDirection: "column",
+            zIndex: 10,
+            position: "relative",
+            overflowY: "auto",
+            maxHeight: "calc(100vh - 140px)",
+          }}
+        >
+          {/* Navbar fixed inside floating window */}
           <div style={{ flex: "0 0 auto" }}>
             <AboutMoreNavbar />
           </div>
 
-          {/* Scrollable content */}
+          {/* Scrollable content area */}
           <div
             style={{
               overflowY: "auto",
