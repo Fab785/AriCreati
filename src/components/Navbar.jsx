@@ -38,7 +38,7 @@ export default function Navbar() {
           <Link to="/gallery" onClick={() => setIsMenuOpen(false)}>GALLERY</Link>
         </li>
         <li>
-          <a href="#workplace">EXTRAS</a>
+          <Link to="/extras" onClick={() => setIsMenuOpen(false)}>EXTRAS</Link>
         </li>
         <li>
           <a href="#contact">CONTACTS</a>
@@ -47,3 +47,4 @@ export default function Navbar() {
     </nav>
   );
 }
+

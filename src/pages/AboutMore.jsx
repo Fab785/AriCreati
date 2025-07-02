@@ -66,7 +66,7 @@ export default function AboutMore() {
           <div
             style={{
               overflowY: "auto",
-              padding: "40px 0",
+              padding: "145px 0",
               flex: "1 1 auto",
             }}
           >

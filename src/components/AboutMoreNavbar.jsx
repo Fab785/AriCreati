@@ -51,7 +51,15 @@ export default function AboutMoreNavbar() {
           </a>
         </li>
         <li>
-          <a href="#workplace">EXTRAS</a>
+          <a
+            href="/extras"
+            onClick={(e) => {
+              e.preventDefault();
+              navigate("/extras");
+            }}
+          >
+            EXTRAS
+          </a>
         </li>
         <li>
           <a href="#contact">CONTACTS</a>

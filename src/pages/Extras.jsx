@@ -61,7 +61,7 @@ export default function Extras() {
           <div
             style={{
               overflowY: "auto",
-              padding: "40px 60px",
+              padding: "120px 60px",
               flex: "1 1 auto",
               color: "#333",
               fontFamily: "'Montserrat', sans-serif",
