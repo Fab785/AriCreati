@@ -217,4 +217,13 @@ body {
 }
 
 
+.extra-section {
+  background-color: rgba(250, 205, 166, 0.85);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 60px 40px;
+  margin: 40px auto;
+  max-width: 1200px;
+  box-shadow: 0 8px 30px rgba(165, 64, 64, 0.25);
+}
 

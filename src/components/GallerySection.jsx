@@ -12,7 +12,7 @@ export default function GallerySection() {
       <section
         id="gallery"
         style={{
-          backgroundColor: "#EDEDED",
+          backgroundColor: "#FACDA6",
           padding: "100px 40px",
           marginTop: "80px",
           display: "flex",
@@ -85,7 +85,7 @@ export default function GallerySection() {
           <h2 style={{ fontSize: "32px", color: "#A54040", marginBottom: "16px" }}>
             Our Artistic Collections
           </h2>
-          <p style={{ fontSize: "16px", color: "#333", marginBottom: "24px" }}>
+          <p style={{ fontSize: "16px", color: "#A54040", marginBottom: "24px" }}>
             Explore our curated works created for life’s most meaningful occasions—baby registries,
             birthday memories, and unforgettable weddings. Each piece is thoughtfully designed
             to preserve emotions through art.
@@ -112,7 +112,7 @@ export default function GallerySection() {
         </div>
       </section>
     </div>
-  );
+  )
 }
 
 

@@ -1,11 +1,11 @@
+// src/components/ExtraNavbar.jsx
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import logo from "../assets/Ari.jpg";
-import RotatingTextGallery from "./RotatingTextGallery";
+import RotatingTextExtras from "./RotatingTextExtras";
 
-export default function GalleryNavbar() {
+export default function ExtraNavbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const navigate = useNavigate();
 
   return (
     <nav className="navbar">
@@ -17,7 +17,7 @@ export default function GalleryNavbar() {
         </div>
       </div>
 
-      <RotatingTextGallery />
+      <RotatingTextExtras />
 
       <button
         className="burger-button"
@@ -29,32 +29,24 @@ export default function GalleryNavbar() {
 
       <ul className={`navbar-links ${isMenuOpen ? "show" : ""}`}>
         <li>
-          <a
-            href="/"
-            onClick={(e) => {
-              e.preventDefault();
-              navigate("/");
-            }}
-          >
+          <Link to="/" onClick={() => setIsMenuOpen(false)}>
             HOME
-          </a>
+          </Link>
         </li>
         <li>
-          <a
-            href="/about-more"
-            onClick={(e) => {
-              e.preventDefault();
-              navigate("/about-more");
-            }}
-          >
+          <Link to="/about-more" onClick={() => setIsMenuOpen(false)}>
             ABOUT ME
+          </Link>
+        </li>
+        <li>
+          <Link to="/gallery" onClick={() => setIsMenuOpen(false)}>
+            GALLERY
+          </Link>
+        </li>
+        <li>
+          <a href="#contact" onClick={() => setIsMenuOpen(false)}>
+            CONTACTS
           </a>
-        </li>
-        <li>
-          <a href="#workplace">EXTRAS</a>
-        </li>
-        <li>
-          <a href="#contact">CONTACTS</a>
         </li>
       </ul>
     </nav>

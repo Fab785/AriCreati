@@ -17,7 +17,7 @@ export default function AboutSection() {
           justifyContent: "space-between",
           gap: "40px",
           padding: "60px 40px",
-          backgroundColor: "#eee",
+          backgroundColor: "#FACDA6",
           borderRadius: "50px",
           boxShadow: "0 10px 40px rgba(0, 0, 0, 0.1)",
           color: "#A54040",

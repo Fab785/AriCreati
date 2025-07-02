@@ -7,6 +7,8 @@ import AboutSection from "./components/AboutSection";
 import GallerySection from "./components/GallerySection";
 import AboutMore from "./pages/AboutMore";
 import Gallery from "./pages/Gallery";
+import Extras from "./pages/Extras";
+import ExtrasSection from "./components/ExtrasSection";
 import BackToTopButton from "./UI/BackToTopButton";
 
 function App() {
@@ -28,6 +30,7 @@ function App() {
           <AboutSection />
         </div>
         <GallerySection />
+        <ExtrasSection />
       </div>
       <BackToTopButton />
     </>
@@ -39,12 +42,14 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/about-more" element={<AboutMore />} />
         <Route path="/gallery" element={<Gallery />} />
+        <Route path="/extras" element={<Extras />} />
       </Routes>
     </Router>
   );
 }
 
 export default App;
+
 
 
 
