@@ -3,6 +3,8 @@ import ExtraNavbar from "../components/ExtraNavbar";
 import bgImage from "../assets/Extrasback.jpg";
 import imgKids1 from "../assets/kids.jpg";
 import imgKids2 from "../assets/kids2.jpg";
+import imgKids3 from "../assets/kiddo.jpg";
+import imgKids4 from "../assets/fake.jpg";
 import imgEco1 from "../assets/materiali.jpg";
 import imgEco2 from "../assets/materiali2.jpg";
 import imgEgypt1 from "../assets/egitto.jpg";
@@ -67,6 +69,7 @@ export default function Extras() {
               fontFamily: "'Montserrat', sans-serif",
             }}
           >
+            {/* Updated Image Section */}
             <section style={{ marginBottom: "60px", textAlign: "center" }}>
               <h2 style={{ color: "#A54040", fontSize: "30px", marginBottom: "20px" }}>
                 Creative Moments with Children
@@ -81,24 +84,46 @@ export default function Extras() {
                 style={{
                   display: "flex",
                   justifyContent: "center",
-                  gap: "20px",
-                  marginTop: "30px",
+                  gap: "30px",
+                  marginTop: "40px",
                   flexWrap: "wrap",
                 }}
               >
-                <img
-                  src={imgKids1}
-                  alt="Kids workshop 1"
-                  style={{ width: "45%", borderRadius: "12px", transform: "rotate(-3deg)" }}
-                />
-                <img
-                  src={imgKids2}
-                  alt="Kids workshop 2"
-                  style={{ width: "45%", borderRadius: "12px", transform: "rotate(3deg)" }}
-                />
+                {[{
+                  src: imgKids1,
+                  color: "#2ecc71",
+                  rotate: "-8deg"
+                }, {
+                  src: imgKids2,
+                  color: "#e74c3c",
+                  rotate: "6deg"
+                }, {
+                  src: imgKids3,
+                  color: "#3498db",
+                  rotate: "-5deg"
+                }, {
+                  src: imgKids4,
+                  color: "#9b59b6",
+                  rotate: "7deg"
+                }].map((img, index) => (
+                  <img
+                    key={index}
+                    src={img.src}
+                    alt={`Kids workshop ${index + 1}`}
+                    style={{
+                      width: "180px",
+                      height: "auto",
+                      borderRadius: "16px",
+                      transform: `rotate(${img.rotate})`,
+                      boxShadow: `0 0 12px 4px ${img.color}`,
+                      transition: "transform 0.3s ease, box-shadow 0.3s ease",
+                    }}
+                  />
+                ))}
               </div>
             </section>
 
+            {/* Rest of the sections unchanged */}
             <section
               style={{
                 marginBottom: "60px",
@@ -190,6 +215,7 @@ export default function Extras() {
     </>
   );
 }
+
 
 
 
