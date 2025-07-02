@@ -207,12 +207,14 @@ body {
 .scroll-area::-webkit-scrollbar-thumb {
   background-color: #7f2d2d;
   border-radius: 10px;
-  margin: 200px;             /* ✅ Makes thumb shorter by adding spacing */
-  min-height: 40px;         /* ✅ Prevents it from being too small */
+  margin: 200px;             
+  min-height: 40px;         
 }
 
 @keyframes zoomIn {
   0% { transform: scale(1); }
   100% { transform: scale(1.05); }
 }
+
+
 

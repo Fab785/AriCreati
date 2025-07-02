@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import GalleryNavbar from "../components/GalleryNavbar";
+import HeartSpinner from "../components/HeartSpinner";
 import headerImage from "../assets/pexels-surene-palvie-1075224-2399125.jpg";
 import img1 from "../assets/Arlena.jpg";
 import img2 from "../assets/Chloe.jpg";
@@ -19,15 +20,10 @@ import img15 from "../assets/bear2.jpg";
 import img16 from "../assets/bunny.jpg";
 
 export default function Gallery() {
-  const [modalImg, setModalImg] = useState(null);
+  const allImages = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, img14, img15, img16];
   const [visibleCount, setVisibleCount] = useState(8);
+  const [modalImg, setModalImg] = useState(null);
   const [loading, setLoading] = useState(false);
-
-  const allImages = [
-    img1, img2, img3, img4, img5, img6,
-    img7, img8, img9, img10, img11, img12,
-    img13, img14, img15, img16,
-  ];
 
   const openModal = (img) => setModalImg(img);
   const closeModal = () => setModalImg(null);
@@ -35,13 +31,14 @@ export default function Gallery() {
   const handleLoadMore = () => {
     setLoading(true);
     setTimeout(() => {
-      setVisibleCount((prev) => prev + 4);
+      setVisibleCount(prev => prev + 4);
       setLoading(false);
-    }, 800);
+    }, 1200); // Simulate load time
   };
 
   return (
     <>
+      {/* Page wrapper with background image and vertical centering */}
       <div
         style={{
           position: "relative",
@@ -67,6 +64,7 @@ export default function Gallery() {
           }}
         />
 
+        {/* Floating content window */}
         <div
           className="content-window"
           style={{
@@ -84,10 +82,12 @@ export default function Gallery() {
             flexDirection: "column",
           }}
         >
+          {/* Navbar fixed at top */}
           <div style={{ flex: "0 0 auto" }}>
             <GalleryNavbar />
           </div>
 
+          {/* Scrollable content area */}
           <div
             style={{
               overflowY: "auto",
@@ -116,6 +116,7 @@ export default function Gallery() {
               A curated glimpse into my creative works — each image reflects a moment, a message, or a memory.
             </p>
 
+            {/* Gallery Grid */}
             <div
               style={{
                 display: "grid",
@@ -162,10 +163,10 @@ export default function Gallery() {
               ))}
             </div>
 
-            {/* Load More Button or Spinner */}
-            <div style={{ textAlign: "center", marginTop: "30px" }}>
+            {/* Load More or Spinner */}
+            <div style={{ textAlign: "center", marginTop: "40px" }}>
               {loading ? (
-                <div className="spinner" style={spinnerStyle}></div>
+                <HeartSpinner />
               ) : (
                 visibleCount < allImages.length && (
                   <button
@@ -182,12 +183,8 @@ export default function Gallery() {
                       boxShadow: "0 2px 8px rgba(0,0,0,0.2)",
                       transition: "background-color 0.3s ease",
                     }}
-                    onMouseOver={(e) =>
-                      (e.currentTarget.style.backgroundColor = "#842f2f")
-                    }
-                    onMouseOut={(e) =>
-                      (e.currentTarget.style.backgroundColor = "#A54040")
-                    }
+                    onMouseOver={(e) => (e.currentTarget.style.backgroundColor = "#842f2f")}
+                    onMouseOut={(e) => (e.currentTarget.style.backgroundColor = "#A54040")}
                   >
                     Load More
                   </button>
@@ -198,7 +195,7 @@ export default function Gallery() {
         </div>
       </div>
 
-      {/* Modal */}
+      {/* Modal overlay */}
       {modalImg && (
         <div
           onClick={closeModal}
@@ -254,24 +251,4 @@ export default function Gallery() {
     </>
   );
 }
-
-// Spinner style (CSS in JS)
-const spinnerStyle = {
-  border: "4px solid #f3f3f3",
-  borderTop: "4px solid #A54040",
-  borderRadius: "50%",
-  width: "36px",
-  height: "36px",
-  animation: "spin 1s linear infinite",
-  margin: "0 auto",
-};
-
-// Add this keyframe to your main CSS or inside index.css
-// OR insert <style> inside public/index.html:
-/*
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-*/
 
