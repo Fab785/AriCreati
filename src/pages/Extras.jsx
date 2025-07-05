@@ -1,6 +1,7 @@
 import React from "react";
 import ExtraNavbar from "../components/ExtraNavbar";
 import bgImage from "../assets/Extrasback.jpg";
+import Footer from "../components/Footer.jsx";
 import imgKids1 from "../assets/kids.jpg";
 import imgKids2 from "../assets/kids2.jpg";
 import imgKids3 from "../assets/kiddo.jpg";
@@ -13,11 +14,10 @@ import imgEgypt2 from "../assets/egitto2.jpg";
 export default function Extras() {
   return (
     <>
-      {/* Outer wrapper matching Gallery.jsx */}
       <div
         style={{
           position: "relative",
-          height: "100vh",
+          minHeight: "100vh",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
@@ -32,7 +32,6 @@ export default function Extras() {
           boxSizing: "border-box",
         }}
       >
-        {/* Floating window with exact Gallery styles */}
         <div
           className="content-window"
           style={{
@@ -40,8 +39,7 @@ export default function Extras() {
             width: "90vw",
             minHeight: "600px",
             margin: "40px auto",
-            backgroundColor: "rgba(255, 255, 255, 0.85)",
-            backdropFilter: "blur(10px)",
+            backgroundColor: "#FACDA6",
             borderRadius: "26px",
             boxShadow: "0 8px 40px rgba(0, 0, 0, 0.25)",
             border: "1px solid rgba(165, 64, 64, 0.3)",
@@ -54,12 +52,10 @@ export default function Extras() {
             maxHeight: "calc(100vh - 140px)",
           }}
         >
-          {/* Navbar fixed inside floating window */}
           <div style={{ flex: "0 0 auto" }}>
             <ExtraNavbar />
           </div>
 
-          {/* Scrollable content area */}
           <div
             style={{
               overflowY: "auto",
@@ -69,100 +65,118 @@ export default function Extras() {
               fontFamily: "'Montserrat', sans-serif",
             }}
           >
-            {/* Updated Image Section */}
-            <section style={{ marginBottom: "60px", textAlign: "center" }}>
-              <h2 style={{ color: "#A54040", fontSize: "30px", marginBottom: "20px" }}>
+            {/* === Kids Section === */}
+            <section
+              style={{
+                marginBottom: "60px",
+                padding: "40px",
+                background: "#FFEAD2",
+                borderRadius: "18px",
+                boxShadow: "0 10px 25px rgba(0, 0, 0, 0.15)",
+              }}
+            >
+              <h2 style={{ color: "#A54040", fontSize: "30px", marginBottom: "30px", textAlign: "center" }}>
                 Creative Moments with Children
               </h2>
-              <p style={{ fontSize: "16px", lineHeight: 1.6, maxWidth: "800px", margin: "0 auto" }}>
-                Aricreati passionately collaborates with children through playful workshops,
-                allowing their creativity to shine in colorful and unforgettable ways.
-                These events spark imagination and joy — crafting art that’s just as magical as
-                the smiles they inspire.
-              </p>
+
               <div
                 style={{
                   display: "flex",
                   justifyContent: "center",
                   gap: "30px",
-                  marginTop: "40px",
+                  marginBottom: "30px",
                   flexWrap: "wrap",
                 }}
               >
                 {[{
                   src: imgKids1,
                   color: "#2ecc71",
-                  rotate: "-8deg"
+                  rotate: "-8deg",
+                  animation: "float 3s ease-in-out infinite"
                 }, {
                   src: imgKids2,
                   color: "#e74c3c",
-                  rotate: "6deg"
+                  rotate: "6deg",
+                  animation: "float 4s ease-in-out infinite"
                 }, {
                   src: imgKids3,
                   color: "#3498db",
-                  rotate: "-5deg"
+                  rotate: "-5deg",
+                  animation: "float 3.5s ease-in-out infinite"
                 }, {
                   src: imgKids4,
                   color: "#9b59b6",
-                  rotate: "7deg"
+                  rotate: "7deg",
+                  animation: "float 4.5s ease-in-out infinite"
                 }].map((img, index) => (
                   <img
                     key={index}
                     src={img.src}
-                    alt={`Kids workshop ${index + 1}`}
+                    alt={`Kids ${index + 1}`}
                     style={{
                       width: "180px",
                       height: "auto",
                       borderRadius: "16px",
                       transform: `rotate(${img.rotate})`,
                       boxShadow: `0 0 12px 4px ${img.color}`,
-                      transition: "transform 0.3s ease, box-shadow 0.3s ease",
+                      animation: img.animation,
                     }}
                   />
                 ))}
               </div>
+
+              <p style={{ fontSize: "16px", lineHeight: 1.6, maxWidth: "800px", margin: "0 auto", textAlign: "center" }}>
+                Aricreati passionately collaborates with children through playful workshops,
+                allowing their creativity to shine in colorful and unforgettable ways.
+                These events spark imagination and joy — crafting art that’s just as magical as
+                the smiles they inspire.
+              </p>
             </section>
 
-            {/* Rest of the sections unchanged */}
+            {/* === Eco Section === */}
             <section
               style={{
                 marginBottom: "60px",
-                display: "flex",
-                flexWrap: "wrap",
-                alignItems: "center",
-                gap: "40px",
+                padding: "40px",
+                background: "#F9E5D6",
+                borderRadius: "18px",
+                boxShadow: "0 10px 25px rgba(0, 0, 0, 0.12)",
               }}
             >
-              <div style={{ flex: 1 }}>
-                <img
-                  src={imgEco1}
-                  alt="Eco materials 1"
-                  style={{
-                    width: "100%",
-                    borderRadius: "16px",
-                    boxShadow: "0 4px 12px rgba(0,0,0,0.2)",
-                  }}
-                />
-              </div>
-              <div style={{ flex: 1 }}>
-                <h2 style={{ color: "#A54040", fontSize: "30px", marginBottom: "20px" }}>
-                  Sustainable & Natural Materials
-                </h2>
-                <p style={{ fontSize: "16px", lineHeight: 1.6 }}>
-                  At Aricreati, the environment matters. That’s why each creation is made with
-                  biodegradable and organic materials, proving that beauty and sustainability
-                  can go hand-in-hand. Every piece tells a story of love — not only for art
-                  but for the planet.
-                </p>
+              <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "40px" }}>
+                <div style={{ flex: 1 }}>
+                  <img
+                    src={imgEco1}
+                    alt="Eco materials 1"
+                    style={{
+                      width: "100%",
+                      borderRadius: "16px",
+                      boxShadow: "0 4px 12px rgba(0,0,0,0.2)",
+                    }}
+                  />
+                </div>
+                <div style={{ flex: 1 }}>
+                  <h2 style={{ color: "#A54040", fontSize: "30px", marginBottom: "20px" }}>
+                    Sustainable & Natural Materials
+                  </h2>
+                  <p style={{ fontSize: "16px", lineHeight: 1.6 }}>
+                    At Aricreati, the environment matters. That’s why each creation is made with
+                    biodegradable and organic materials, proving that beauty and sustainability
+                    can go hand-in-hand. Every piece tells a story of love — not only for art
+                    but for the planet.
+                  </p>
+                </div>
               </div>
             </section>
 
+            {/* === Egypt Section === */}
             <section
               style={{
                 marginBottom: "60px",
-                backgroundColor: "#F3E1D0",
-                padding: "30px",
-                borderRadius: "16px",
+                padding: "40px",
+                background: "#FCE6D3",
+                borderRadius: "18px",
+                boxShadow: "0 10px 25px rgba(0, 0, 0, 0.1)",
               }}
             >
               <h2
@@ -212,9 +226,20 @@ export default function Extras() {
           </div>
         </div>
       </div>
+      {/* Floating animation keyframes */}
+      <style>
+        {`
+          @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
+          }
+        `}
+      </style>
     </>
   );
 }
+
 
 
 

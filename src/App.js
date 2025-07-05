@@ -10,6 +10,7 @@ import Gallery from "./pages/Gallery";
 import Extras from "./pages/Extras";
 import ExtrasSection from "./components/ExtrasSection";
 import BackToTopButton from "./UI/BackToTopButton";
+import Footer from "./components/Footer.jsx"; // ✅ Import Footer
 
 function App() {
   const aboutRef = useRef(null);
@@ -33,6 +34,7 @@ function App() {
         <ExtrasSection />
       </div>
       <BackToTopButton />
+      <Footer /> {/* ✅ Footer added outside floating window */}
     </>
   );
 
@@ -40,9 +42,33 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/about-more" element={<AboutMore />} />
-        <Route path="/gallery" element={<Gallery />} />
-        <Route path="/extras" element={<Extras />} />
+        <Route
+          path="/about-more"
+          element={
+            <>
+              <AboutMore />
+              <Footer /> {/* ✅ Footer added to about-more */}
+            </>
+          }
+        />
+        <Route
+          path="/gallery"
+          element={
+            <>
+              <Gallery />
+              <Footer /> {/* ✅ Footer added to gallery */}
+            </>
+          }
+        />
+        <Route
+          path="/extras"
+          element={
+            <>
+              <Extras />
+              <Footer /> {/* ✅ Footer added to extras */}
+            </>
+          }
+        />
       </Routes>
     </Router>
   );
