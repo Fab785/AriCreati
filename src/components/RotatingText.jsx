@@ -24,11 +24,12 @@ export default function RotatingText() {
       style={{
         transition: "opacity 0.5s ease-in-out",
         opacity: fade ? 1 : 0,
-        fontSize: "40px",
+        fontSize: "44px",
         fontWeight: "bold",
         color: "#FACDA6",
         marginLeft: "20px",
         minWidth: "90px",
+        letterSpacing: "22px",
         textAlign: "center",
         userSelect: "none",
         fontFamily: "'Playfair Display', serif",

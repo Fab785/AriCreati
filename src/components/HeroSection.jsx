@@ -1,10 +1,7 @@
 import React from "react";
-import { useTranslation } from "react-i18next";
 import heroImage from "../assets/pexels-jessbaileydesign-1117542.jpg";
 
 export default function HeroSection({ onDiscoverClick }) {
-  const { t, i18n } = useTranslation();
-
   return (
     <section
       style={{
@@ -42,7 +39,7 @@ export default function HeroSection({ onDiscoverClick }) {
         }}
       >
         <h2 style={{ fontSize: "28px", fontWeight: "800", textTransform: "uppercase", margin: 0 }}>
-          {t("hero.italys_most")}
+          Italy's Most
         </h2>
 
         <h1
@@ -53,7 +50,7 @@ export default function HeroSection({ onDiscoverClick }) {
             fontFamily: "'Pacifico', cursive",
           }}
         >
-          {t("hero.exciting")}
+          Exciting
         </h1>
 
         <h2
@@ -64,7 +61,7 @@ export default function HeroSection({ onDiscoverClick }) {
             margin: "30px 0 20px",
           }}
         >
-          {t("hero.creative_company")}
+          Creative Company
         </h2>
 
         <p
@@ -76,7 +73,7 @@ export default function HeroSection({ onDiscoverClick }) {
             color: "#333",
           }}
         >
-          {t("hero.description")}
+          Bringing unique artistic experiences to life with passion and dedication.
         </p>
 
         <p
@@ -87,7 +84,7 @@ export default function HeroSection({ onDiscoverClick }) {
             marginTop: "30px",
           }}
         >
-          {t("hero.tagline")}
+          Creativity knows no bounds.
         </p>
 
         <button
@@ -104,16 +101,8 @@ export default function HeroSection({ onDiscoverClick }) {
             cursor: "pointer",
           }}
         >
-          {t("hero.discover_more")}
+          Discover More
         </button>
-
-        {/* Language toggles (optional) */}
-        <div style={{ marginTop: 20 }}>
-          <button onClick={() => i18n.changeLanguage("it")} style={{ marginRight: 10 }}>
-            🇮🇹 Italiano
-          </button>
-          <button onClick={() => i18n.changeLanguage("en")}>🇬🇧 English</button>
-        </div>
       </div>
     </section>
   );
