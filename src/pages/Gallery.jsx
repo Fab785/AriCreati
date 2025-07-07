@@ -75,7 +75,7 @@ export default function Gallery() {
           width: "90vw",
           minHeight: "600px",
           margin: "40px auto",
-          backgroundColor: "rgba(255, 255, 255, 0.85)",
+          backgroundColor: "#FFEAD2",
           backdropFilter: "blur(10px)",
           borderRadius: "26px",
           boxShadow: "0 8px 40px rgba(0, 0, 0, 0.25)",
@@ -114,8 +114,8 @@ export default function Gallery() {
             </h2>
             <p
               style={{
-                fontSize: "16px",
-                color: "#555",
+                fontSize: "20px",
+                color: "#A54040",
                 textAlign: "center",
                 marginBottom: "40px",
               }}

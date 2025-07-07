@@ -40,7 +40,7 @@ export default function AboutMore() {
             width: "90vw",
             minHeight: "600px",
             margin: "40px auto",
-            backgroundColor: "#FACDA6", // ✅ peach background
+            backgroundColor: "#FACDA6", 
             borderRadius: "26px",
             boxShadow: "0 8px 40px rgba(0, 0, 0, 0.25)",
             border: "1px solid rgba(165, 64, 64, 0.3)",
