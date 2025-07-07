@@ -59,7 +59,7 @@ export default function Extras() {
           <div
             style={{
               overflowY: "auto",
-              padding: "120px 60px",
+              padding: "150px 60px",
               flex: "1 1 auto",
               color: "#333",
               fontFamily: "'Montserrat', sans-serif",
@@ -75,7 +75,14 @@ export default function Extras() {
                 boxShadow: "0 10px 25px rgba(0, 0, 0, 0.15)",
               }}
             >
-              <h2 style={{ color: "#A54040", fontSize: "30px", marginBottom: "30px", textAlign: "center" }}>
+              <h2
+                style={{
+                  color: "#A54040",
+                  fontSize: "30px",
+                  marginBottom: "30px",
+                  textAlign: "center",
+                }}
+              >
                 Creative Moments with Children
               </h2>
 
@@ -88,27 +95,32 @@ export default function Extras() {
                   flexWrap: "wrap",
                 }}
               >
-                {[{
-                  src: imgKids1,
-                  color: "#2ecc71",
-                  rotate: "-8deg",
-                  animation: "float 3s ease-in-out infinite"
-                }, {
-                  src: imgKids2,
-                  color: "#e74c3c",
-                  rotate: "6deg",
-                  animation: "float 4s ease-in-out infinite"
-                }, {
-                  src: imgKids3,
-                  color: "#3498db",
-                  rotate: "-5deg",
-                  animation: "float 3.5s ease-in-out infinite"
-                }, {
-                  src: imgKids4,
-                  color: "#9b59b6",
-                  rotate: "7deg",
-                  animation: "float 4.5s ease-in-out infinite"
-                }].map((img, index) => (
+                {[
+                  {
+                    src: imgKids1,
+                    color: "#2ecc71",
+                    rotate: "-8deg",
+                    animation: "float 3s ease-in-out infinite",
+                  },
+                  {
+                    src: imgKids2,
+                    color: "#e74c3c",
+                    rotate: "6deg",
+                    animation: "float 4s ease-in-out infinite",
+                  },
+                  {
+                    src: imgKids3,
+                    color: "#3498db",
+                    rotate: "-5deg",
+                    animation: "float 3.5s ease-in-out infinite",
+                  },
+                  {
+                    src: imgKids4,
+                    color: "#9b59b6",
+                    rotate: "7deg",
+                    animation: "float 4.5s ease-in-out infinite",
+                  },
+                ].map((img, index) => (
                   <img
                     key={index}
                     src={img.src}
@@ -125,11 +137,20 @@ export default function Extras() {
                 ))}
               </div>
 
-              <p style={{ fontSize: "16px", lineHeight: 1.6, maxWidth: "800px", margin: "0 auto", textAlign: "center" }}>
-                Aricreati passionately collaborates with children through playful workshops,
-                allowing their creativity to shine in colorful and unforgettable ways.
-                These events spark imagination and joy — crafting art that’s just as magical as
-                the smiles they inspire.
+              <p
+                style={{
+                  color: "#A54040",
+                  fontSize: "16px",
+                  lineHeight: 1.6,
+                  maxWidth: "800px",
+                  margin: "0 auto",
+                  textAlign: "center",
+                }}
+              >
+                Aricreati passionately collaborates with children through playful
+                workshops, allowing their creativity to shine in colorful and
+                unforgettable ways. These events spark imagination and joy — crafting
+                art that’s just as magical as the smiles they inspire.
               </p>
             </section>
 
@@ -143,7 +164,14 @@ export default function Extras() {
                 boxShadow: "0 10px 25px rgba(0, 0, 0, 0.12)",
               }}
             >
-              <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "40px" }}>
+              <div
+                style={{
+                  display: "flex",
+                  flexWrap: "wrap",
+                  alignItems: "center",
+                  gap: "40px",
+                }}
+              >
                 <div style={{ flex: 1 }}>
                   <img
                     src={imgEco1}
@@ -156,14 +184,16 @@ export default function Extras() {
                   />
                 </div>
                 <div style={{ flex: 1 }}>
-                  <h2 style={{ color: "#A54040", fontSize: "30px", marginBottom: "20px" }}>
+                  <h2
+                    style={{ color: "#A54040", fontSize: "30px", marginBottom: "20px" }}
+                  >
                     Sustainable & Natural Materials
                   </h2>
-                  <p style={{ fontSize: "16px", lineHeight: 1.6 }}>
-                    At Aricreati, the environment matters. That’s why each creation is made with
-                    biodegradable and organic materials, proving that beauty and sustainability
-                    can go hand-in-hand. Every piece tells a story of love — not only for art
-                    but for the planet.
+                  <p style={{ color: "#A54040", fontSize: "16px", lineHeight: 1.6 }}>
+                    At Aricreati, the environment matters. That’s why each creation is
+                    made with biodegradable and organic materials, proving that beauty
+                    and sustainability can go hand-in-hand. Every piece tells a story of
+                    love — not only for art but for the planet.
                   </p>
                 </div>
               </div>
@@ -194,14 +224,15 @@ export default function Extras() {
                   fontSize: "16px",
                   lineHeight: 1.6,
                   textAlign: "center",
+                  color: "#A54040",
                   maxWidth: "900px",
                   margin: "0 auto 30px",
                 }}
               >
-                A journey through time and mystery — Egypt inspires the soul of Aricreati.
-                Ancient symbols, majestic pyramids, and golden textures ignite unique ideas
-                reflected in one-of-a-kind works. This passion brings elegance, mystery,
-                and history into modern creativity.
+                A journey through time and mystery — Egypt inspires the soul of
+                Aricreati. Ancient symbols, majestic pyramids, and golden textures
+                ignite unique ideas reflected in one-of-a-kind works. This passion
+                brings elegance, mystery, and history into modern creativity.
               </p>
               <div
                 style={{
@@ -223,6 +254,32 @@ export default function Extras() {
                 />
               </div>
             </section>
+
+            {/* === THIS IS ARICREATI Section === */}
+            <section
+              style={{
+                marginTop: "60px",
+                padding: "40px",
+                background: "#FFEAD2",
+                borderRadius: "18px",
+                boxShadow: "0 10px 25px rgba(0, 0, 0, 0.15)",
+                textAlign: "center",
+              }}
+            >
+              <h1
+                style={{
+                  fontFamily: "'Playfair Display', serif",
+                  fontSize: "48px",
+                  fontWeight: "700",
+                  color: "#A54040",
+                  letterSpacing: "0.15em",
+                  textShadow: "2px 2px 6px rgba(165, 64, 64, 0.4)",
+                  margin: 0,
+                }}
+              >
+                THIS IS ARICREATI
+              </h1>
+            </section>
           </div>
         </div>
       </div>
@@ -237,11 +294,6 @@ export default function Extras() {
           }
         `}
       </style>
-
-      {/* Footer with adjusted spacing */}
-      <div style={{ marginTop: "-60px" }}>
-        <Footer />
-      </div>
     </>
   );
 }
