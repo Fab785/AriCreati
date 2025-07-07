@@ -1,18 +1,20 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import heroImage from "../assets/pexels-jessbaileydesign-1117542.jpg";
 
 export default function HeroSection({ onDiscoverClick }) {
+  const { t, i18n } = useTranslation();
+
   return (
     <section
       style={{
         position: "relative",
-        minHeight: "80vh", // ✅ reduced from 100vh
+        minHeight: "80vh",
         overflow: "hidden",
         borderRadius: "26px",
-        marginBottom: "110px", // ✅ keeps gap between Hero and About
+        marginBottom: "110px",
       }}
     >
-      {/* Background Image with Zoom */}
       <div
         style={{
           position: "absolute",
@@ -28,7 +30,6 @@ export default function HeroSection({ onDiscoverClick }) {
         }}
       />
 
-      {/* Foreground Content */}
       <div
         style={{
           position: "relative",
@@ -41,7 +42,7 @@ export default function HeroSection({ onDiscoverClick }) {
         }}
       >
         <h2 style={{ fontSize: "28px", fontWeight: "800", textTransform: "uppercase", margin: 0 }}>
-          ITALY'S MOST
+          {t("hero.italys_most")}
         </h2>
 
         <h1
@@ -52,7 +53,7 @@ export default function HeroSection({ onDiscoverClick }) {
             fontFamily: "'Pacifico', cursive",
           }}
         >
-          Exciting
+          {t("hero.exciting")}
         </h1>
 
         <h2
@@ -63,7 +64,7 @@ export default function HeroSection({ onDiscoverClick }) {
             margin: "30px 0 20px",
           }}
         >
-          Creative Company
+          {t("hero.creative_company")}
         </h2>
 
         <p
@@ -75,8 +76,7 @@ export default function HeroSection({ onDiscoverClick }) {
             color: "#333",
           }}
         >
-          As multi-award-winning artists across Italy, Aricreati are known as the artisans of the
-          creative sector.
+          {t("hero.description")}
         </p>
 
         <p
@@ -87,7 +87,7 @@ export default function HeroSection({ onDiscoverClick }) {
             marginTop: "30px",
           }}
         >
-          Good Creations, Real Artists, Great Vibes.
+          {t("hero.tagline")}
         </p>
 
         <button
@@ -104,11 +104,21 @@ export default function HeroSection({ onDiscoverClick }) {
             cursor: "pointer",
           }}
         >
-          DISCOVER MORE
+          {t("hero.discover_more")}
         </button>
+
+        {/* Language toggles (optional) */}
+        <div style={{ marginTop: 20 }}>
+          <button onClick={() => i18n.changeLanguage("it")} style={{ marginRight: 10 }}>
+            🇮🇹 Italiano
+          </button>
+          <button onClick={() => i18n.changeLanguage("en")}>🇬🇧 English</button>
+        </div>
       </div>
     </section>
   );
 }
+
+
 
 

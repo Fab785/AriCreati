@@ -226,6 +226,7 @@ export default function Extras() {
           </div>
         </div>
       </div>
+
       {/* Floating animation keyframes */}
       <style>
         {`
@@ -236,9 +237,17 @@ export default function Extras() {
           }
         `}
       </style>
+
+      {/* Footer with adjusted spacing */}
+      <div style={{ marginTop: "-60px" }}>
+        <Footer />
+      </div>
     </>
   );
 }
+
+
+
 
 
 
