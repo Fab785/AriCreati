@@ -8,7 +8,6 @@ import thirdImg from "../assets/pexels-karolina-grabowska-6634775.jpg";
 export default function AboutMore() {
   return (
     <>
-      {/* Outer wrapper matching Gallery.jsx */}
       <div
         style={{
           position: "relative",
@@ -19,7 +18,6 @@ export default function AboutMore() {
           margin: 0,
         }}
       >
-        {/* Background image exactly like Gallery */}
         <img
           src={headerImage}
           alt="About Me Header"
@@ -35,7 +33,6 @@ export default function AboutMore() {
           }}
         />
 
-        {/* Floating window with exact Gallery styles */}
         <div
           className="content-window"
           style={{
@@ -43,7 +40,7 @@ export default function AboutMore() {
             width: "90vw",
             minHeight: "600px",
             margin: "40px auto",
-            backgroundColor: "#FACDA6",
+            backgroundColor: "#FACDA6", // ✅ peach background
             borderRadius: "26px",
             boxShadow: "0 8px 40px rgba(0, 0, 0, 0.25)",
             border: "1px solid rgba(165, 64, 64, 0.3)",
@@ -56,29 +53,32 @@ export default function AboutMore() {
             maxHeight: "calc(100vh - 140px)",
           }}
         >
-          {/* Navbar fixed inside floating window */}
           <div style={{ flex: "0 0 auto" }}>
             <AboutMoreNavbar />
           </div>
 
-          {/* Scrollable content area */}
           <div
             style={{
               overflowY: "auto",
-              padding: "145px 0",
+              padding: "180px 0 60px",
               flex: "1 1 auto",
+              display: "flex",
+              flexDirection: "column",
+              gap: "120px",
             }}
           >
-            {/* SECTION 1: Image Left - Text Right */}
+            {/* Section 1 */}
             <div
               style={{
-                backgroundColor: "#FACDA6",
+                backgroundColor: "#FFEAD2", // ✅ light peach for section
                 display: "flex",
-                alignItems: "center",
+                alignItems: "flex-start",
                 gap: "40px",
-                paddingBottom: "60px",
+                padding: "40px",
                 color: "#A54040",
                 fontFamily: "'Montserrat', sans-serif",
+                borderRadius: "18px",
+                boxShadow: "0 10px 25px rgba(0, 0, 0, 0.15)",
               }}
             >
               <img
@@ -93,8 +93,8 @@ export default function AboutMore() {
                 }}
               />
               <div style={{ width: "60%" }}>
-                <h2>More About My Creative Journey</h2>
-                <p>
+                <h2 style={{ fontSize: "28px", marginBottom: "10px" }}>More About My Creative Journey</h2>
+                <p style={{ fontSize: "18px", lineHeight: 1.7 }}>
                   Welcome to a deeper look into my world. My creative journey began with a love for
                   color, storytelling, and the magic of transformation through artistic expression.
                   Over the years, I’ve explored various forms of educational art, blending emotion
@@ -103,16 +103,19 @@ export default function AboutMore() {
               </div>
             </div>
 
-            {/* SECTION 2: Text Left - Image Right */}
+            {/* Section 2 */}
             <div
               style={{
-                backgroundColor: "#FACDA6",
+                backgroundColor: "#FFEAD2", // ✅ light peach for section
                 display: "flex",
-                alignItems: "center",
+                alignItems: "flex-start",
                 gap: "40px",
-                flexDirection: "row-reverse",
+                padding: "40px",
                 color: "#A54040",
                 fontFamily: "'Montserrat', sans-serif",
+                flexDirection: "row-reverse",
+                borderRadius: "18px",
+                boxShadow: "0 10px 25px rgba(0, 0, 0, 0.15)",
               }}
             >
               <img
@@ -127,8 +130,8 @@ export default function AboutMore() {
                 }}
               />
               <div style={{ width: "60%" }}>
-                <h2>Inspiration Behind My Work</h2>
-                <p>
+                <h2 style={{ fontSize: "28px", marginBottom: "10px" }}>Inspiration Behind My Work</h2>
+                <p style={{ fontSize: "18px", lineHeight: 1.7 }}>
                   Every creation begins with a spark—sometimes a color, a feeling, or a memory from
                   my hometown. I draw inspiration from nature, daily life, and human emotion, turning
                   ordinary moments into meaningful visuals.
@@ -136,16 +139,18 @@ export default function AboutMore() {
               </div>
             </div>
 
-            {/* SECTION 3: Image Left - Text Right again */}
+            {/* Section 3 */}
             <div
               style={{
-                backgroundColor: "#FACDA6",
+                backgroundColor: "#FFEAD2", // ✅ light peach for section
                 display: "flex",
-                alignItems: "center",
+                alignItems: "flex-start",
                 gap: "40px",
-                padding: "60px 0",
+                padding: "40px",
                 color: "#A54040",
                 fontFamily: "'Montserrat', sans-serif",
+                borderRadius: "18px",
+                boxShadow: "0 10px 25px rgba(0, 0, 0, 0.15)",
               }}
             >
               <img
@@ -160,11 +165,11 @@ export default function AboutMore() {
                 }}
               />
               <div style={{ width: "60%" }}>
-                <h2>Tools and Materials I Love</h2>
-                <p>
-                  Whether it's vibrant paint, textured paper, digital brushes, or natural materials, I believe that tools
-                  carry energy. I carefully choose each one to bring out the best in my artistic vision. This selection reflects
-                  not just what I use, but how I connect with each piece I create.
+                <h2 style={{ fontSize: "28px", marginBottom: "10px" }}>Tools and Materials I Love</h2>
+                <p style={{ fontSize: "18px", lineHeight: 1.7 }}>
+                Whether it’s soft yarn, delicate stitches, or the rhythm of the hook in my hand, I choose each material and technique thoughtfully to bring out the best in my work. This process reflects not just what I create, but how I connect with every piece I make.
+
+
                 </p>
               </div>
             </div>
@@ -174,5 +179,7 @@ export default function AboutMore() {
     </>
   );
 }
+
+
 
 

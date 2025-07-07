@@ -12,7 +12,7 @@ export default function Footer() {
         fontFamily: "'Montserrat', sans-serif",
         borderTop: "1px solid rgba(165, 64, 64, 0.2)",
         textAlign: "center",
-        marginTop: "60px",
+        marginTop: "0px",
       }}
     >
       {/* Top section with nav and icons */}
