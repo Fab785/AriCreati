@@ -29,7 +29,7 @@ export default function RotatingText() {
         color: "#FACDA6",
         marginLeft: "20px",
         minWidth: "90px",
-        letterSpacing: "22px",
+        letterSpacing: "12px",
         textAlign: "center",
         userSelect: "none",
         fontFamily: "'Playfair Display', serif",
