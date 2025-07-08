@@ -227,3 +227,21 @@ body {
   box-shadow: 0 8px 30px rgba(165, 64, 64, 0.25);
 }
 
+/* Hide brand text on mobile */
+@media (max-width: 768px) {
+  .navbar-text-left {
+    display: none;
+  }
+
+  .navbar-brand {
+    justify-content: center !important;
+    width: 100% !important;
+  }
+
+  .navbar-logo {
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+
