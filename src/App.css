@@ -1,8 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap');
+/* ----------------- FONT IMPORTS ----------------- */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap'); /* Elegant like "Passionate foodies" */
 
 /* ----------------- GLOBAL ------------------ */
@@ -23,7 +22,7 @@ body {
 
 /* ----------------- NAVBAR ------------------ */
 .navbar {
-  position: fixed;  /* fixed at top */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -35,9 +34,9 @@ body {
   align-items: center;
   flex-wrap: wrap;
   gap: 16px;
-  border-radius: 0;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  margin: 0; /* remove any margin */
+  margin: 0;
+  border-radius: 0;
 }
 
 /* Logo */
@@ -125,24 +124,24 @@ body {
 
 /* ----------------- FLOATING CONTENT WINDOW ------------------ */
 .content-window {
-  width: 95%; /* Almost full width but with a margin on sides */
-  max-width: 1200px; /* Wider window */
+  width: 95%;
+  max-width: 1200px;
   min-height: 600px;
-  max-height: calc(100vh - 290px); /* Responsive height */
+  max-height: calc(100vh - 290px);
   margin: 0 auto 40px;
 
   background-color: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(10px);
   border-radius: 26px;
   box-shadow: 0 8px 40px rgba(0, 0, 0, 0.25);
-  border: 1px solid rgba(165, 64, 64, 0.3); /* Subtle red border */
+  border: 1px solid rgba(165, 64, 64, 0.3);
 
-  overflow-y: auto;   /* Scrollable vertical */
-  overflow-x: hidden; /* Prevent horizontal scroll */
+  overflow-y: auto;
+  overflow-x: hidden;
   scrollbar-width: thin;
   scrollbar-color: #a54040 rgba(255, 255, 255, 0.3);
 
-  padding: 10px 10px 50px 10px; /* Padding */
+  padding: 10px 10px 50px 10px;
   position: relative;
   z-index: 10;
 }
@@ -163,22 +162,24 @@ body {
 }
 
 .scroll-area::-webkit-scrollbar {
-  width: 2px;               /* ✅ Thinner bar */
-  height: 2px;              /* ✅ Thinner horizontal scroll if needed */
+  width: 2px;
+  height: 2px;
 }
 
 .scroll-area::-webkit-scrollbar-thumb {
   background-color: #7f2d2d;
   border-radius: 10px;
-  margin: 200px;             
-  min-height: 40px;         
+  margin: 200px;
+  min-height: 40px;
 }
 
+/* Animation */
 @keyframes zoomIn {
   0% { transform: scale(1); }
   100% { transform: scale(1.05); }
 }
 
+/* Extra section */
 .extra-section {
   background-color: rgba(250, 205, 166, 0.85);
   backdrop-filter: blur(10px);
@@ -190,18 +191,16 @@ body {
 }
 
 /* --- MOBILE RESPONSIVE --- */
-
 @media (max-width: 768px) {
-  /* NAVBAR fixes */
   .navbar {
-    position: fixed !important; /* keep fixed on top */
+    position: fixed !important;
     top: 0;
     left: 0;
     width: 100% !important;
     padding: 15px 20px !important;
-    background-color: #A54040 !important; /* solid dark red background */
+    background-color: #A54040 !important;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-    z-index: 1000 !important; /* very high to be above everything */
+    z-index: 1000 !important;
     display: flex !important;
     justify-content: space-between !important;
     align-items: center !important;
@@ -217,7 +216,7 @@ body {
   }
 
   .navbar-text-left {
-    display: none !important; /* hide brand text on mobile */
+    display: none !important;
   }
 
   .navbar-logo {
@@ -241,7 +240,7 @@ body {
 
   .navbar-links {
     position: fixed !important;
-    top: 65px !important; /* just below navbar */
+    top: 65px !important;
     right: 10px !important;
     background-color: #fff !important;
     border-radius: 12px !important;
@@ -266,16 +265,14 @@ body {
     font-size: 18px !important;
   }
 
-  /* CONTENT WINDOW fixes */
   .content-window {
-    margin-top: 90px !important; /* push down below fixed navbar */
+    margin-top: 90px !important;
     width: 95vw !important;
-    max-height: calc(100vh - 120px) !important; /* account for navbar height */
+    max-height: calc(100vh - 120px) !important;
     padding: 20px !important;
     overflow-y: auto !important;
   }
 
-  /* Stack image and text vertically inside content-window */
   .content-window > div > div {
     flex-direction: column !important;
     gap: 20px !important;
@@ -293,7 +290,6 @@ body {
     width: 100% !important;
   }
 
-  /* Text resizing */
   .content-window h2 {
     font-size: 22px !important;
   }
@@ -303,6 +299,7 @@ body {
     line-height: 1.5 !important;
   }
 }
+
 
 
 
