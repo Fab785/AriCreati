@@ -40,7 +40,6 @@ body {
   margin: 0; /* remove any margin */
 }
 
-
 /* Logo */
 .navbar-logo {
   width: 80px;
@@ -116,40 +115,6 @@ body {
   z-index: 999;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .burger-button {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    font-size: 2rem;
-    background: none;
-    border: none;
-    color: #FACDA6;
-    cursor: pointer;
-    display: block;
-    z-index: 999;
-  }
-
-  .navbar-links {
-    display: none;
-    flex-direction: column;
-    gap: 16px;
-    text-align: center;
-    width: 100%;
-    margin-top: 10px;
-  }
-
-  .navbar-links.show {
-    display: flex;
-  }
-}
-
 /* ----------------- APP CONTAINER ------------------ */
 .app-container {
   min-height: 100vh;
@@ -157,7 +122,6 @@ body {
   margin-top: 0;
   padding: 0;
 }
-
 
 /* ----------------- FLOATING CONTENT WINDOW ------------------ */
 .content-window {
@@ -198,7 +162,6 @@ body {
   border: 2px solid rgba(255, 255, 255, 0.5);
 }
 
-
 .scroll-area::-webkit-scrollbar {
   width: 2px;               /* ✅ Thinner bar */
   height: 2px;              /* ✅ Thinner horizontal scroll if needed */
@@ -216,7 +179,6 @@ body {
   100% { transform: scale(1.05); }
 }
 
-
 .extra-section {
   background-color: rgba(250, 205, 166, 0.85);
   backdrop-filter: blur(10px);
@@ -227,21 +189,123 @@ body {
   box-shadow: 0 8px 30px rgba(165, 64, 64, 0.25);
 }
 
-/* Hide brand text on mobile */
+/* --- MOBILE RESPONSIVE --- */
+
 @media (max-width: 768px) {
-  .navbar-text-left {
-    display: none;
+  /* NAVBAR fixes */
+  .navbar {
+    position: fixed !important; /* keep fixed on top */
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    padding: 15px 20px !important;
+    background-color: #A54040 !important; /* solid dark red background */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    z-index: 1000 !important; /* very high to be above everything */
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    border-radius: 0 !important;
+    margin-bottom: 0 !important;
   }
 
   .navbar-brand {
-    justify-content: center !important;
-    width: 100% !important;
+    flex: 1;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+  }
+
+  .navbar-text-left {
+    display: none !important; /* hide brand text on mobile */
   }
 
   .navbar-logo {
-    display: block;
-    margin: 0 auto;
+    width: 70px !important;
+    height: 70px !important;
+    margin: 0 !important;
+    border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  }
+
+  .burger-button {
+    display: block !important;
+    font-size: 28px !important;
+    cursor: pointer !important;
+    background: none !important;
+    border: none !important;
+    color: #FACDA6 !important;
+    z-index: 1100 !important;
+  }
+
+  .navbar-links {
+    position: fixed !important;
+    top: 65px !important; /* just below navbar */
+    right: 10px !important;
+    background-color: #fff !important;
+    border-radius: 12px !important;
+    padding: 15px 20px !important;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25) !important;
+    display: none !important;
+    flex-direction: column !important;
+    gap: 15px !important;
+    width: 250px !important;
+    max-width: 90vw !important;
+    z-index: 1050 !important;
+  }
+
+  .navbar-links.show {
+    display: flex !important;
+  }
+
+  .navbar-links li a {
+    color: #A54040 !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    font-size: 18px !important;
+  }
+
+  /* CONTENT WINDOW fixes */
+  .content-window {
+    margin-top: 90px !important; /* push down below fixed navbar */
+    width: 95vw !important;
+    max-height: calc(100vh - 120px) !important; /* account for navbar height */
+    padding: 20px !important;
+    overflow-y: auto !important;
+  }
+
+  /* Stack image and text vertically inside content-window */
+  .content-window > div > div {
+    flex-direction: column !important;
+    gap: 20px !important;
+    padding: 20px !important;
+  }
+
+  .content-window > div > div > img {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 250px !important;
+    display: block !important;
+  }
+
+  .content-window > div > div > div {
+    width: 100% !important;
+  }
+
+  /* Text resizing */
+  .content-window h2 {
+    font-size: 22px !important;
+  }
+
+  .content-window p {
+    font-size: 16px !important;
+    line-height: 1.5 !important;
   }
 }
+
+
+
+
 
 

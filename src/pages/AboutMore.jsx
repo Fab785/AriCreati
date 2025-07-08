@@ -40,7 +40,7 @@ export default function AboutMore() {
             width: "90vw",
             minHeight: "600px",
             margin: "40px auto",
-            backgroundColor: "#FACDA6", 
+            backgroundColor: "#FACDA6",
             borderRadius: "26px",
             boxShadow: "0 8px 40px rgba(0, 0, 0, 0.25)",
             border: "1px solid rgba(165, 64, 64, 0.3)",
@@ -53,9 +53,8 @@ export default function AboutMore() {
             maxHeight: "calc(100vh - 140px)",
           }}
         >
-          <div style={{ flex: "0 0 auto" }}>
-            <AboutMoreNavbar />
-          </div>
+          {/* Put Navbar here */}
+          <AboutMoreNavbar />
 
           <div
             style={{
@@ -67,10 +66,11 @@ export default function AboutMore() {
               gap: "120px",
             }}
           >
+            {/* Your sections remain unchanged */}
             {/* Section 1 */}
             <div
               style={{
-                backgroundColor: "#FFEAD2", // ✅ light peach for section
+                backgroundColor: "#FFEAD2",
                 display: "flex",
                 alignItems: "flex-start",
                 gap: "40px",
@@ -93,12 +93,15 @@ export default function AboutMore() {
                 }}
               />
               <div style={{ width: "60%" }}>
-                <h2 style={{ fontSize: "28px", marginBottom: "10px" }}>More About My Creative Journey</h2>
+                <h2 style={{ fontSize: "28px", marginBottom: "10px" }}>
+                  More About My Creative Journey
+                </h2>
                 <p style={{ fontSize: "18px", lineHeight: 1.7 }}>
-                  Welcome to a deeper look into my world. My creative journey began with a love for
-                  color, storytelling, and the magic of transformation through artistic expression.
-                  Over the years, I’ve explored various forms of educational art, blending emotion
-                  with design to craft experiences that speak to the heart.
+                  Welcome to a deeper look into my world. My creative journey began
+                  with a love for color, storytelling, and the magic of
+                  transformation through artistic expression. Over the years, I’ve
+                  explored various forms of educational art, blending emotion with
+                  design to craft experiences that speak to the heart.
                 </p>
               </div>
             </div>
@@ -106,7 +109,7 @@ export default function AboutMore() {
             {/* Section 2 */}
             <div
               style={{
-                backgroundColor: "#FFEAD2", // ✅ light peach for section
+                backgroundColor: "#FFEAD2",
                 display: "flex",
                 alignItems: "flex-start",
                 gap: "40px",
@@ -130,11 +133,14 @@ export default function AboutMore() {
                 }}
               />
               <div style={{ width: "60%" }}>
-                <h2 style={{ fontSize: "28px", marginBottom: "10px" }}>Inspiration Behind My Work</h2>
+                <h2 style={{ fontSize: "28px", marginBottom: "10px" }}>
+                  Inspiration Behind My Work
+                </h2>
                 <p style={{ fontSize: "18px", lineHeight: 1.7 }}>
-                  Every creation begins with a spark—sometimes a color, a feeling, or a memory from
-                  my hometown. I draw inspiration from nature, daily life, and human emotion, turning
-                  ordinary moments into meaningful visuals.
+                  Every creation begins with a spark—sometimes a color, a feeling,
+                  or a memory from my hometown. I draw inspiration from nature, daily
+                  life, and human emotion, turning ordinary moments into meaningful
+                  visuals.
                 </p>
               </div>
             </div>
@@ -142,7 +148,7 @@ export default function AboutMore() {
             {/* Section 3 */}
             <div
               style={{
-                backgroundColor: "#FFEAD2", // ✅ light peach for section
+                backgroundColor: "#FFEAD2",
                 display: "flex",
                 alignItems: "flex-start",
                 gap: "40px",
@@ -165,11 +171,14 @@ export default function AboutMore() {
                 }}
               />
               <div style={{ width: "60%" }}>
-                <h2 style={{ fontSize: "28px", marginBottom: "10px" }}>Tools and Materials I Love</h2>
+                <h2 style={{ fontSize: "28px", marginBottom: "10px" }}>
+                  Tools and Materials I Love
+                </h2>
                 <p style={{ fontSize: "18px", lineHeight: 1.7 }}>
-                Whether it’s soft yarn, delicate stitches, or the rhythm of the hook in my hand, I choose each material and technique thoughtfully to bring out the best in my work. This process reflects not just what I create, but how I connect with every piece I make.
-
-
+                  Whether it’s soft yarn, delicate stitches, or the rhythm of the hook
+                  in my hand, I choose each material and technique thoughtfully to
+                  bring out the best in my work. This process reflects not just what I
+                  create, but how I connect with every piece I make.
                 </p>
               </div>
             </div>
@@ -179,6 +188,7 @@ export default function AboutMore() {
     </>
   );
 }
+
 
 
 

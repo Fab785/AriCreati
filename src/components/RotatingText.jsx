@@ -32,7 +32,7 @@ export default function RotatingText() {
         letterSpacing: "12px",
         textAlign: "center",
         userSelect: "none",
-        fontFamily: "'Playfair Display', serif",
+        fontFamily: "'Dancing Script', cursive",
       }}
     >
       {words[index]}
