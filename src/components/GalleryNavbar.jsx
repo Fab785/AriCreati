@@ -19,7 +19,10 @@ export default function GalleryNavbar() {
           </div>
         </div>
 
-        <RotatingTextGallery />
+        {/* Wrapped in class for mobile hide */}
+        <div className="rotating-text-wrapper">
+          <RotatingTextGallery />
+        </div>
 
         <button
           className="burger-button"
@@ -215,6 +218,17 @@ export default function GalleryNavbar() {
           </div>
         </div>
       )}
+
+      {/* CSS to hide rotating text on small screens */}
+      <style>
+        {`
+          @media (max-width: 768px) {
+            .rotating-text-wrapper {
+              display: none !important;
+            }
+          }
+        `}
+      </style>
     </>
   );
 }

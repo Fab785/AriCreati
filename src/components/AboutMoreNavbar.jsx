@@ -19,7 +19,10 @@ export default function AboutMoreNavbar() {
           </div>
         </div>
 
-        <RotatingTextAboutMore />
+        {/* Hide rotating text on smartphones */}
+        <div className="rotating-text-wrapper">
+          <RotatingTextAboutMore />
+        </div>
 
         <button
           className="burger-button"
@@ -215,9 +218,21 @@ export default function AboutMoreNavbar() {
           </div>
         </div>
       )}
+
+      {/* CSS to hide rotating text on small screens */}
+      <style>
+        {`
+          @media (max-width: 768px) {
+            .rotating-text-wrapper {
+              display: none !important;
+            }
+          }
+        `}
+      </style>
     </>
   );
 }
+
 
 
 
