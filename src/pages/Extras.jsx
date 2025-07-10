@@ -87,6 +87,7 @@ export default function Extras() {
               </h2>
 
               <div
+                className="kids-gallery"
                 style={{
                   display: "flex",
                   justifyContent: "center",
@@ -284,13 +285,51 @@ export default function Extras() {
         </div>
       </div>
 
-      {/* Floating animation keyframes */}
+      {/* Floating animation + Responsive fix for smartphones */}
       <style>
         {`
           @keyframes float {
             0% { transform: translateY(0); }
             50% { transform: translateY(-10px); }
             100% { transform: translateY(0); }
+          }
+
+          @media (max-width: 600px) {
+            .content-window {
+              padding: 20px !important;
+              max-height: calc(100vh - 100px) !important;
+            }
+
+            section {
+              padding: 20px !important;
+              margin-bottom: 40px !important;
+            }
+
+            section h2 {
+              font-size: 22px !important;
+              text-align: center !important;
+            }
+
+            section p {
+              font-size: 14px !important;
+              text-align: center !important;
+              padding: 0 10px;
+            }
+
+            .kids-gallery {
+              gap: 16px !important;
+              flex-direction: column !important;
+              align-items: center !important;
+            }
+
+            section img {
+              width: 100% !important;
+              height: auto !important;
+            }
+
+            h1 {
+              font-size: 30px !important;
+            }
           }
         `}
       </style>

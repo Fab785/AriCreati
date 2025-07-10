@@ -1,4 +1,4 @@
-// src/components/ExtraNavbar.jsx
+
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/Ari.jpg";
@@ -38,7 +38,10 @@ export default function ExtraNavbar() {
           </div>
         </div>
 
-        <RotatingTextExtras />
+        {/* Wrapped for responsive control */}
+        <div className="rotating-text-wrapper">
+          <RotatingTextExtras />
+        </div>
 
         <button
           className="burger-button"

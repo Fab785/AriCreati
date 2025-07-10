@@ -300,6 +300,13 @@ body {
   }
 }
 
+@media (max-width: 768px) {
+  .rotating-text-wrapper {
+    display: none !important;
+  }
+}
+
+
 
 
 
