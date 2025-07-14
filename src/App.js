@@ -10,7 +10,7 @@ import Gallery from "./pages/Gallery";
 import Extras from "./pages/Extras";
 import ExtrasSection from "./components/ExtrasSection";
 import BackToTopButton from "./UI/BackToTopButton";
-import Footer from "./components/Footer.jsx"; // ✅ Import Footer
+import Footer from "./components/Footer.jsx";
 
 function App() {
   const aboutRef = useRef(null);
@@ -24,7 +24,7 @@ function App() {
   const HomePage = () => (
     <>
       <Navbar />
-      <div style={{ height: "250px" }}></div>
+      <div className="spacer-div"></div>
       <div className="content-window">
         <HeroSection onDiscoverClick={scrollToAbout} />
         <div ref={aboutRef}>
@@ -34,7 +34,7 @@ function App() {
         <ExtrasSection />
       </div>
       <BackToTopButton />
-      <Footer /> {/* ✅ Footer added outside floating window */}
+      <Footer /> 
     </>
   );
 
@@ -47,7 +47,7 @@ function App() {
           element={
             <>
               <AboutMore />
-              <Footer /> {/* ✅ Footer added to about-more */}
+              <Footer /> 
             </>
           }
         />
@@ -56,7 +56,7 @@ function App() {
           element={
             <>
               <Gallery />
-              <Footer /> {/* ✅ Footer added to gallery */}
+              <Footer /> 
             </>
           }
         />
@@ -65,7 +65,7 @@ function App() {
           element={
             <>
               <Extras />
-              <Footer /> {/* ✅ Footer added to extras */}
+              <Footer /> 
             </>
           }
         />

@@ -104,9 +104,39 @@ export default function HeroSection({ onDiscoverClick }) {
           Discover More
         </button>
       </div>
+
+      {/* Responsive tweaks for smartphones */}
+      <style>
+        {`
+          @media (max-width: 768px) {
+            section {
+              min-height: 100vh !important;
+              margin-bottom: 40px !important;
+            }
+
+            section > div:last-child {
+              padding-top: 20px !important;
+              padding-bottom: 40px !important;
+            }
+
+            section h1 {
+              font-size: 48px !important;
+            }
+
+            section h2 {
+              font-size: 22px !important;
+            }
+
+            section p {
+              font-size: 16px !important;
+            }
+          }
+        `}
+      </style>
     </section>
   );
 }
+
 
 
 

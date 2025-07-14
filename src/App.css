@@ -306,6 +306,16 @@ body {
   }
 }
 
+/* Spacer to push content below fixed navbar */
+.spacer-div {
+  height: 250px;
+}
+
+@media (max-width: 768px) {
+  .spacer-div {
+    height: 90px; /* adjust to match your mobile navbar height */
+  }
+}
 
 
 
