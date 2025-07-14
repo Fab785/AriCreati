@@ -5,7 +5,7 @@ import Footer from "../components/Footer.jsx";
 import imgKids1 from "../assets/kids.jpg";
 import imgKids2 from "../assets/kids2.jpg";
 import imgKids3 from "../assets/kiddo.jpg";
-import imgKids4 from "../assets/fake.jpg";
+import imgKids4 from "../assets/pexels-mikhail-nilov-8307746.jpg";
 import imgEco1 from "../assets/materiali.jpg";
 import imgEco2 from "../assets/materiali2.jpg";
 import imgEgypt1 from "../assets/egitto.jpg";
