@@ -1,13 +1,11 @@
 import React from "react";
 import ExtraNavbar from "../components/ExtraNavbar";
 import bgImage from "../assets/Extrasback.jpg";
-import Footer from "../components/Footer.jsx";
 import imgKids1 from "../assets/kids.jpg";
 import imgKids2 from "../assets/kids2.jpg";
 import imgKids3 from "../assets/kiddo.jpg";
 import imgKids4 from "../assets/pexels-mikhail-nilov-8307746.jpg";
 import imgEco1 from "../assets/materiali.jpg";
-import imgEco2 from "../assets/materiali2.jpg";
 import imgEgypt1 from "../assets/egitto.jpg";
 import imgEgypt2 from "../assets/egitto2.jpg";
 
@@ -265,6 +263,7 @@ export default function Extras() {
                 borderRadius: "18px",
                 boxShadow: "0 10px 25px rgba(0, 0, 0, 0.15)",
                 textAlign: "center",
+                overflow: "hidden", // fix for mobile
               }}
             >
               <h1
@@ -276,6 +275,7 @@ export default function Extras() {
                   letterSpacing: "0.15em",
                   textShadow: "2px 2px 6px rgba(165, 64, 64, 0.4)",
                   margin: 0,
+                  wordWrap: "break-word", // ensures text wraps inside container
                 }}
               >
                 THIS IS ARICREATI
@@ -329,6 +329,7 @@ export default function Extras() {
 
             h1 {
               font-size: 30px !important;
+              overflow-wrap: break-word !important; // fix for small screens
             }
           }
         `}
@@ -336,6 +337,7 @@ export default function Extras() {
     </>
   );
 }
+
 
 
 
