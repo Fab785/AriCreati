@@ -6,25 +6,54 @@ export default function ExtraSection() {
   const navigate = useNavigate();
 
   return (
-    <section className="extra-section" style={{ display: "flex", gap: "40px", alignItems: "center", flexWrap: "wrap" }}>
+    <section
+      className="extra-section"
+      style={{
+        display: "flex",
+        gap: "40px",
+        alignItems: "center",
+        flexWrap: "wrap",
+        padding: "20px",
+        backgroundColor: "#FACDA6", // peach background
+      }}
+    >
       {/* Left: Image */}
-      <div style={{ flex: "1 1 300px", minWidth: "280px" }}>
-        <img 
-          src={extraImage} 
-          alt="Extras Preview" 
-          style={{ width: "100%", borderRadius: "16px", boxShadow: "0 6px 20px rgba(165, 64, 64, 0.3)", objectFit: "cover" }} 
+      <div
+        style={{
+          flex: "1 1 100%",
+          maxWidth: "500px",
+          width: "100%",
+        }}
+      >
+        <img
+          src={extraImage}
+          alt="Extras Preview"
+          style={{
+            width: "100%",
+            height: "auto",
+            borderRadius: "16px",
+            boxShadow: "0 6px 20px rgba(165, 64, 64, 0.3)",
+            display: "block",
+          }}
         />
       </div>
 
       {/* Right: Text and Button */}
-      <div style={{ flex: "1 1 300px", minWidth: "280px", color: "#A54040", fontFamily: "'Montserrat', sans-serif" }}>
+      <div
+        style={{
+          flex: "1 1 100%",
+          maxWidth: "500px",
+          color: "#A54040",
+          fontFamily: "'Montserrat', sans-serif",
+        }}
+      >
         <h2 style={{ fontSize: "32px", marginBottom: "20px" }}>Extras & More</h2>
         <p style={{ fontSize: "18px", lineHeight: 1.6, marginBottom: "30px" }}>
           Discover additional creative projects, behind-the-scenes insights, and exclusive content that
           showcase the depth of my artistic journey.
         </p>
-        <button 
-          onClick={() => navigate("/extras")} 
+        <button
+          onClick={() => navigate("/extras")}
           style={{
             backgroundColor: "#A54040",
             color: "#FACDA6",
